@@ -1,0 +1,79 @@
+<div class="wrapper">
+    <!-- Header -->
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image" data-parallax="true" [style.background-image]="'url(' + currentService?.img + ')'">
+        </div>
+        <div class="content-center">
+            <div class="container">
+                <h1 class="title">{{ currentService?.title }}</h1>
+                <div class="text-center">
+                    <i class="now-ui-icons {{ currentService?.icon }}" style="font-size: 3rem; margin-top: 10px;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="section">
+        <div class="container">
+            <div class="row" *ngIf="currentService">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h3 class="title">Overview</h3>
+                    <h5 class="description">{{ currentService.description }}</h5>
+                </div>
+            </div>
+            
+            <div class="separator separator-primary"></div>
+
+            <div class="section-story-overview" *ngIf="currentService">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image-container" [style.background-image]="'url(' + currentService.img + ')'" style="border-radius: 12px; height: 300px; background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="image-container" style="background-image: url('assets/img/bg7.jpg'); border-radius: 12px; height: 300px; background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <h3 class="title text-center">Key Features & Offerings</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" *ngFor="let feature of currentService.features">
+                                <i class="now-ui-icons ui-1_check text-success mr-3"></i> 
+                                {{ feature }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div class="text-center" *ngIf="!currentService">
+                <h3>Service not found.</h3>
+                <a [routerLink]="['/index']" class="btn btn-primary btn-round">Back Home</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 text-center">
+                    <h4 class="title">Interested in this service?</h4>
+                    <a href="https://wa.me/919250974145?text=I%27m%20interested%20in%20{{currentService?.title}}" target="_blank" class="btn btn-success btn-round btn-lg">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer" data-background-color="black">
+        <div class="container">
+            <div class="copyright">
+                &copy; 2025, Spirecrest Solutions Pvt. Ltd.
+            </div>
+        </div>
+    </footer>
+</div>

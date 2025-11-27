@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { Location } from '@angular/common';
@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
     constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
+    
     ngOnInit() {
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
@@ -38,5 +39,38 @@ export class AppComponent implements OnInit {
                 }
             });
         });
+    }
+
+    // --- SECURITY PROTOCOLS ---
+
+    // 1. Disable Right Click Globally
+    @HostListener('document:contextmenu', ['$event'])
+    onRightClick(event: MouseEvent) {
+        event.preventDefault();
+    }
+
+    // 2. Disable Drag and Drop (Prevents dragging images to desktop)
+    @HostListener('document:dragstart', ['$event'])
+    onDragStart(event: DragEvent) {
+        event.preventDefault();
+    }
+
+    // 3. Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+U, PrintScreen)
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+        // F12
+        if (event.key === 'F12') {
+            event.preventDefault();
+            return false;
+        }
+        // Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+U (Source)
+        if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J' || event.key === 'C')) {
+            event.preventDefault();
+            return false;
+        }
+        if (event.ctrlKey && event.key === 'u') {
+            event.preventDefault();
+            return false;
+        }
     }
 }

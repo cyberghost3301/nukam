@@ -9,13 +9,24 @@ import { LoginComponent } from './examples/login/login.component';
 import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
+import { TeamComponent } from './team/team.component'; // <--- ADD THIS
+import { TeamProfileComponent } from './team-profile/team-profile.component'; // <--- ADD THIS
+
+import { ServiceDetailsComponent } from './service-details/service-details.component'; // <--- 1. Import this
+
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     { path: 'index',                component: ComponentsComponent },
     { path: 'nucleoicons',          component: NucleoiconsComponent },
     { path: 'examples/landing',     component: LandingComponent },
     { path: 'examples/login',       component: LoginComponent },
-    { path: 'examples/profile',     component: ProfileComponent }
+    { path: 'examples/profile',     component: ProfileComponent },
+    
+    { path: 'team',                 component: TeamComponent }, // <--- ADD THIS
+    { path: 'profile/:id',          component: TeamProfileComponent }, // <--- ADD THIS
+
+    { path: 'service/:id',          component: ServiceDetailsComponent } // <--- 2. Add this route
+
 ];
 
 @NgModule({

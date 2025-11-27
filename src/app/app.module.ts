@@ -9,11 +9,17 @@ import { ExamplesModule } from './examples/examples.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { TeamComponent } from './team/team.component';
+import { TeamProfileComponent } from './team-profile/team-profile.component';
+import { ServiceDetailsComponent } from './service-details/service-details.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent
+        NavbarComponent,
+        TeamComponent,
+        TeamProfileComponent,
+        ServiceDetailsComponent
     ],
     imports: [
         BrowserAnimationsModule,

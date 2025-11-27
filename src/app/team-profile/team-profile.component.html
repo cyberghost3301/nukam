@@ -1,0 +1,115 @@
+<div class="wrapper">
+    <!-- BACKGROUND HEADER -->
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image" data-parallax="true" style="background-image: url('assets/img/bg5.jpg');">
+        </div>
+        <div class="content-center">
+            <!-- HEADER CONTENT IF UNLOCKED -->
+            <div class="container" *ngIf="isUnlocked">
+                <h1 class="title">{{ currentMember?.name }}</h1>
+                <p class="category">{{ currentMember?.role }}</p>
+            </div>
+             <!-- HEADER CONTENT IF LOCKED -->
+             <div class="container" *ngIf="!isUnlocked">
+                <h1 class="title">Restricted Access</h1>
+                <p class="category">Identity Verification Required</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            
+            <!-- STATE 1: LOCKED SCREEN -->
+            <div *ngIf="!isUnlocked" class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card card-login card-plain">
+                        <div class="card-header text-center">
+                            <div class="logo-container" style="width: 80px; margin: 0 auto; margin-bottom: 20px;">
+                                <i class="now-ui-icons objects_key-25" style="font-size: 3em; color: #888;"></i>
+                            </div>
+                            <h5>Enter Credentials to View Profile</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group no-border form-control-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="now-ui-icons ui-1_lock-circle-open"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Passcode..." [(ngModel)]="passwordInput" (keyup.enter)="unlockProfile()">
+                            </div>
+                            <p class="text-danger text-center" *ngIf="errorMessage">{{ errorMessage }}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button (click)="unlockProfile()" class="btn btn-primary btn-round btn-lg btn-block">Verify & Unlock</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATE 2: UNLOCKED PROFILE -->
+            <div *ngIf="isUnlocked && currentMember" class="button-container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto">
+                        <div class="profile-content text-center">
+                            <!-- Image Wrapper for Circle Crop & Security -->
+                            <div class="image-wrapper img-raised rounded-circle" style="margin-top: -130px; border: 4px solid white;">
+                                <div class="image-overlay"></div>
+                                <img [src]="currentMember.image" alt="Profile" class="unstealable-image">
+                            </div>
+
+                            <h3 class="title">{{ currentMember.name }}</h3>
+                            <span class="badge badge-success mb-3"><i class="now-ui-icons ui-1_check"></i> Identity Verified</span>
+                            <br>
+                            
+                            <table class="table table-bordered text-left mt-4">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="bg-light">Employee ID</th>
+                                        <td>{{ currentMember.id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="bg-light">Role</th>
+                                        <td>{{ currentMember.role }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="bg-light">Status</th>
+                                        <td><span class="text-success font-weight-bold">{{ currentMember.status }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="bg-light">Joined</th>
+                                        <td>{{ currentMember.joined }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="bg-light">Email</th>
+                                        <td><a href="mailto:{{currentMember.email}}">{{ currentMember.email }}</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="description mt-4 text-left">
+                                <h5 class="title">Professional Bio</h5>
+                                <p>{{ currentMember.bio }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ERROR STATE: ID NOT FOUND -->
+            <div *ngIf="!currentMember && isUnlocked" class="text-center">
+                <h3>Profile not found.</h3>
+                <a [routerLink]="['/team']" class="btn btn-primary btn-round">Back to Team</a>
+            </div>
+
+        </div>
+    </div>
+    
+    <footer class="footer" data-background-color="black">
+        <div class="container">
+            <div class="copyright">
+                &copy; 2025, Spirecrest Solutions Pvt. Ltd.
+            </div>
+        </div>
+    </footer>
+</div>
