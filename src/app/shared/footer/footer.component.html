@@ -1,0 +1,31 @@
+<footer class="footer" data-background-color="black">
+    <div class="container">
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/company/sspl-bharat" target="_blank">
+                        SSPL
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/about']">
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/blog']">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/cyberghost3301/" target="_blank">
+                        GITHUB
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            &copy; {{data | date: 'yyyy'}}, Designed by <a href="https://www.pcmechanix.in" target="_blank">PCMECHANIX</a>. Coded by <a href="https://www.linkedin.com/in/aum-chatterjee/" target="_blank">Aum</a>.
+        </div>
+    </div>
+</footer>

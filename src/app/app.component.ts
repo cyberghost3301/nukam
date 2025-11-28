@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'; // Added ActivatedRoute
+import { Title } from '@angular/platform-browser'; // Added Title service
 import { DOCUMENT } from '@angular/common';
 import { Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { filter, Subscription } from 'rxjs';
+import { filter, map, Subscription } from 'rxjs'; // Added map
 
 @Component({
     selector: 'app-root',
@@ -14,9 +15,35 @@ export class AppComponent implements OnInit {
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
-    constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
+    constructor(
+        private renderer : Renderer2, 
+        private router: Router, 
+        @Inject(DOCUMENT,) private document: any, 
+        private element : ElementRef, 
+        public location: Location,
+        private titleService: Title, // Inject Title
+        private activatedRoute: ActivatedRoute // Inject ActivatedRoute
+    ) {}
     
     ngOnInit() {
+        // --- SEO TITLE LOGIC ---
+        this.router.events.pipe(
+            filter(event => event instanceof NavigationEnd),
+            map(() => {
+                let child = this.activatedRoute.firstChild;
+                while (child.firstChild) {
+                    child = child.firstChild;
+                }
+                if (child.snapshot.data['title']) {
+                    return child.snapshot.data['title'];
+                }
+                return 'Spirecrest Solutions'; // Fallback Title
+            })
+        ).subscribe((title: string) => {
+            this.titleService.setTitle(title);
+        });
+
+        // --- NAVBAR LOGIC ---
         var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {

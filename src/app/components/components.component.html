@@ -7,14 +7,12 @@
         <div class="content-center brand">
           <img class="n-logo" src="assets/img/sspl-logo-w.png" alt="">
           
-          <!-- DESKTOP VIEW: Full Legal Name (Hidden on small screens) -->
+          <!-- DESKTOP VIEW: Full Legal Name -->
           <h1 class="h1-seo d-none d-md-block">SPIRECREST SOLUTIONS PRIVATE LIMITED</h1>
-          
           <h3 class="h3-seo d-none d-md-block">Smart Ideas. Solid Executions. Scalable Results.</h3>
 
-          <!-- MOBILE VIEW: Shortened Name (Visible only on small screens) -->
+          <!-- MOBILE VIEW: Shortened Name -->
           <h1 class="h1-seo d-block d-md-none">SSPL</h1>
-
           <h3 class="h3-seo d-block d-md-none">Spot. Solve. Serve.</h3>
         </div>
       </div>
@@ -174,12 +172,10 @@
                       <!-- 1. Aum - Founder -->
                       <div class="col-md-3">
                           <div class="team-player">
-                              <a [routerLink]="['/profile', 'aum']">
-                                  <div class="image-wrapper img-raised rounded-circle">
-                                      <div class="image-overlay"></div>
-                                      <img src="assets/img/team/ppaum.jpg" alt="Aum" class="unstealable-image">
-                                  </div>
-                              </a>
+                              <div class="image-wrapper img-raised rounded-circle">
+                                  <div class="image-overlay"></div>
+                                  <img src="assets/img/team/ppaum.jpg" alt="Aum" class="unstealable-image">
+                              </div>
                               <h4 class="title"><a [routerLink]="['/profile', 'aum']">Aum</a></h4>
                               <p class="category text-primary">Founding Director</p>
                               <p class="description">Visionary leader driving innovation and strategic growth for Spirecrest.</p>
@@ -189,12 +185,10 @@
                       <!-- 2. Deshesh - Director -->
                       <div class="col-md-3">
                           <div class="team-player">
-                              <a [routerLink]="['/profile', 'deshesh']">
-                                  <div class="image-wrapper img-raised rounded-circle">
-                                      <div class="image-overlay"></div>
-                                      <img src="assets/img/team/ppdeshesh.jpg" alt="Deshesh" class="unstealable-image">
-                                  </div>
-                              </a>
+                              <div class="image-wrapper img-raised rounded-circle">
+                                  <div class="image-overlay"></div>
+                                  <img src="assets/img/team/ppdeshesh.jpg" alt="Deshesh" class="unstealable-image">
+                              </div>
                               <h4 class="title"><a [routerLink]="['/profile', 'deshesh']">Deshesh</a></h4>
                               <p class="category text-primary">Managing Director</p>
                               <p class="description">Overseeing operations and ensuring excellence in execution across all verticals.</p>
@@ -204,12 +198,10 @@
                       <!-- 3. Er. Saurabh - Strategic Advisor -->
                       <div class="col-md-3">
                           <div class="team-player">
-                              <a [routerLink]="['/profile', 'saurabh']">
-                                  <div class="image-wrapper img-raised rounded-circle">
-                                      <div class="image-overlay"></div>
-                                      <img src="assets/img/team/ppsaurabh.jpg" alt="Saurabh" class="unstealable-image">
-                                  </div>
-                              </a>
+                              <div class="image-wrapper img-raised rounded-circle">
+                                  <div class="image-overlay"></div>
+                                  <img src="assets/img/team/ppsaurabh.jpg" alt="Er. Saurabh" class="unstealable-image">
+                              </div>
                               <h4 class="title"><a [routerLink]="['/profile', 'saurabh']">Er. Saurabh</a></h4>
                               <p class="category text-primary">Strategic Advisor</p>
                               <p class="description">Guiding technical strategy and long-term business development goals.</p>
@@ -219,12 +211,10 @@
                       <!-- 4. Ar. Laraib - Consulting Architect -->
                       <div class="col-md-3">
                           <div class="team-player">
-                              <a [routerLink]="['/profile', 'laraib']">
-                                  <div class="image-wrapper img-raised rounded-circle">
-                                      <div class="image-overlay"></div>
-                                      <img src="assets/img/team/pplaraib.jpg" alt="Laraib" class="unstealable-image">
-                                  </div>
-                              </a>
+                              <div class="image-wrapper img-raised rounded-circle">
+                                  <div class="image-overlay"></div>
+                                  <img src="assets/img/team/pplaraib.jpg" alt="Ar. Laraib" class="unstealable-image">
+                              </div>
                               <h4 class="title"><a [routerLink]="['/profile', 'laraib']">Ar. Laraib</a></h4>
                               <p class="category text-primary">Consulting Architect</p>
                               <p class="description">Leading the design and planning for our Interior & Architecture projects.</p>
@@ -248,35 +238,6 @@
       <!-- END TEAM SECTION -->
     </div>
     
-    <footer class="footer" data-background-color="black">
-        <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.linkedin.com/in/aum-chatterjee/">
-                            Aum Chatterjee
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://spirecrest.in/#about">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://blog.spirecrest.in/">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/cyberghost3301/">
-                            GITHUB
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright">
-              &copy; {{data | date: 'yyyy'}}, Designed by <a href="https://www.pcmechanix.in" target="_blank">PCMECHANIX</a>. Coded by <a href="https://www.linkedin.com/in/aum-chatterjee/" target="_blank">Aum</a>.
-            </div>
-        </div>
-    </footer>
-  </div>
+    <!-- SHARED FOOTER -->
+    <app-footer></app-footer>
+</div>

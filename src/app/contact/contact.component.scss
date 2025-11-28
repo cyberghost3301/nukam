@@ -1,0 +1,70 @@
+/* Custom Animations to match React version */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards 0.3s;
+    opacity: 0; /* Start hidden */
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-out forwards 0.6s;
+    opacity: 0;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 1s ease-out forwards 0.9s;
+    opacity: 0;
+}
+
+.animate-scale-in {
+    animation: scaleIn 1s ease-out forwards 1.2s;
+    opacity: 0;
+}
+
+.animate-scale-in-delay {
+    animation: scaleIn 1s ease-out forwards 1.5s;
+    opacity: 0;
+}
+
+.map-container {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Ensure links in info section don't have default underline unless hovered */
+.info-item a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.info-item a:hover {
+    text-decoration: underline;
+    color: #2c2c2c;
+}
+
+/* Form Styles Override for crisp look */
+.card-contact {
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+/* Fix dropdown appearance in Now UI Kit */
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 15px;
+}
