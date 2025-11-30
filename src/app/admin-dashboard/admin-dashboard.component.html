@@ -14,9 +14,49 @@
 
     <div class="section">
         <div class="container">
+            
+            <!-- TEAM STATUS CARD (Boxed Container) -->
             <div class="row">
-                
-                <!-- Card 1: Messages (Link to Vercel/Email) -->
+                <div class="col-md-12">
+                    <div class="card card-raised">
+                        <div class="card-header">
+                            <h4 class="card-title" style="margin-left: 15px; margin-top: 15px;">Team Status Overview</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                <table class="table table-striped">
+                                    <thead class="text-primary">
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th class="text-right">Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let member of members">
+                                            <td>{{ member.name }}</td>
+                                            <td>{{ member.role }}</td>
+                                            <td>
+                                                <span class="badge" [ngClass]="{'badge-success': member.status === 'Active', 'badge-warning': member.status !== 'Active'}">
+                                                    {{ member.status }}
+                                                </span>
+                                            </td>
+                                            <td class="text-right">
+                                                <button (click)="toggleStatus(member)" class="btn btn-sm btn-info btn-round">
+                                                    Toggle Status
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OTHER CARDS ROW -->
+            <div class="row mt-4">
+                <!-- Inquiries -->
                 <div class="col-md-4">
                     <div class="card card-raised">
                         <div class="card-body text-center">
@@ -24,27 +64,27 @@
                                 <i class="now-ui-icons ui-1_email-85" style="font-size: 3em;"></i>
                             </div>
                             <h4 class="card-title">Inquiries</h4>
-                            <p class="card-description">Check the backend logs for recent contact form submissions.</p>
-                            <a href="https://vercel.com/dashboard" target="_blank" class="btn btn-primary">Open Vercel Logs</a>
+                            <p class="card-description">Check backend logs for recent submissions.</p>
+                            <a href="https://vercel.com/dashboard" target="_blank" class="btn btn-primary">Open Logs</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2: Team Management (Future Feature) -->
+                <!-- Database Reset -->
                 <div class="col-md-4">
                     <div class="card card-raised">
                         <div class="card-body text-center">
-                            <div class="icon icon-info">
-                                <i class="now-ui-icons users_circle-08" style="font-size: 3em;"></i>
+                            <div class="icon icon-danger">
+                                <i class="now-ui-icons arrows-1_refresh-69" style="font-size: 3em;"></i>
                             </div>
-                            <h4 class="card-title">Team Data</h4>
-                            <p class="card-description">Edit profiles or update passwords (requires DB integration).</p>
-                            <button class="btn btn-info disabled">Coming Soon</button>
+                            <h4 class="card-title">Reset Data</h4>
+                            <p class="card-description">Reset team status to defaults.</p>
+                            <button (click)="resetTeamData()" class="btn btn-danger">Reset All</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3: Analytics (Future Feature) -->
+                <!-- Analytics -->
                 <div class="col-md-4">
                     <div class="card card-raised">
                         <div class="card-body text-center">
@@ -52,13 +92,13 @@
                                 <i class="now-ui-icons business_chart-bar-32" style="font-size: 3em;"></i>
                             </div>
                             <h4 class="card-title">Analytics</h4>
-                            <p class="card-description">View site traffic and service popularity statistics.</p>
+                            <p class="card-description">View site traffic statistics.</p>
                             <button class="btn btn-success disabled">Coming Soon</button>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
     <app-footer></app-footer>

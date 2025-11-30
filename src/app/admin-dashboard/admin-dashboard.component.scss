@@ -1,0 +1,12 @@
+/* Force the wrapper to take up at least 100% of the screen height */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* This makes the middle section grow to fill any empty space, 
+   pushing the footer down to the very bottom */
+.section {
+    flex: 1;
+}

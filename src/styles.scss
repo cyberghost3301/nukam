@@ -8,22 +8,20 @@
 /* Desktop Default */
 .page-header .content-center {
     position: absolute !important;
-    /* 60% moves the center point down to clear the navbar, keeping logo & text together */
-    top: 33% !important; 
+    top: 50% !important; 
     left: 50% !important;
     right: 50% !important;
-    /* This centers it perfectly horizontally and vertically based on the top % */
     transform: translate(-50%, -50%) !important;
     width: 100% !important;
     z-index: 2;
     text-align: center !important;
+    padding-top: 60px; 
 }
 
-/* Fix spacing between Logo and Company Name */
 .page-header h1.title, 
 .page-header .h1-seo {
-    padding-top: 0 !important; /* REMOVED massive padding to close the gap */
-    margin-top: 30px !important; /* Small natural gap between logo and text */
+    padding-top: 0 !important; 
+    margin-top: 30px !important; 
     display: block;
     font-weight: 700;
 }
@@ -36,27 +34,238 @@
     z-index: 1050;
 }
 
-/* --- MOBILE SPECIFIC FIXES (Phones & Tablets) --- */
+/* =========================================
+   MOBILE OPTIMIZATION ENGINE (Max Width 991px)
+   ========================================= */
 @media screen and (max-width: 991px) {
-    /* On mobile, move the center up slightly */
+    
+    /* 1. HERO SECTION ADJUSTMENTS */
     .page-header .content-center {
-        top: 55% !important; 
+        /* CHANGED: 55% -> 35% to pull content UP on mobile */
+        top: 35% !important; 
+        width: 100% !important;
+        padding: 0 15px; 
     }
 
     .page-header h1.title, 
     .page-header .h1-seo {
-        font-size: 2.2em !important; 
-        margin-top: 20px !important; 
+        font-size: 2.0em !important; 
+        margin-top: 15px !important; 
     }
 
     .page-header h3 {
         font-size: 1.1em !important; 
+        line-height: 1.4;
     }
+
+    /* 2. NAVBAR TOGGLER (Hamburger) */
+    .navbar-translate {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        position: relative;
+        z-index: 1061; 
+    }
+
+    .navbar-toggler {
+        display: block !important;
+        cursor: pointer;
+        margin-right: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+    }
+    
+    .navbar-toggler-bar {
+        background-color: #fff !important; 
+        display: block !important;
+        width: 24px; 
+        height: 2px;
+        border-radius: 1px;
+    }
+
+    .navbar-toggler-bar + .navbar-toggler-bar {
+        margin-top: 5px !important;
+    }
+
+    /* 3. MOBILE MENU DRAWER (Clean White Theme) */
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px; /* Sidebar width */
+        height: 100vh; /* Full Height */
+        background: #ffffff !important; 
+        z-index: 2000; /* Highest level */
+        padding-top: 80px; 
+        padding-left: 25px;
+        padding-right: 25px;
+        overflow-y: auto; 
+        
+        display: block !important;
+        
+        /* Animation: Slide in from Right */
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%); 
+        box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+    }
+
+    /* Slide in */
+    .nav-open .navbar-collapse {
+        transform: translateX(0) !important;
+    }
+
+    /* --- CLOSE BUTTON ("X") --- */
+    .mobile-close {
+        position: absolute;
+        top: 24px; 
+        right: 20px; 
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2100;
+        padding: 5px;
+    }
+
+    .mobile-close i {
+        font-size: 1.8em;
+        color: #333; 
+        font-weight: bold;
+    }
+
+    /* Mobile Links Styling */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 10px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-bottom: 5px;
+        text-align: left;
+        list-style: none;
+    }
+    
+    .navbar-nav .nav-link {
+        color: #333 !important; 
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0; 
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-nav .nav-link i {
+        margin-right: 15px;
+        color: #1d4ed8; 
+        font-size: 1.2em;
+        vertical-align: middle;
+        min-width: 25px;
+        text-align: center;
+    }
+
+    /* --- MOBILE DROPDOWN FIX (STRICT TOGGLE) --- */
+    
+    /* 1. Default State: Completely Hidden & Collapsed */
+    .navbar-nav .dropdown-menu {
+        display: none !important; /* Force hide */
+        position: static !important;
+        float: none !important;
+        width: auto !important;
+        margin-top: 0;
+        background-color: transparent !important;
+        border: 0;
+        box-shadow: none;
+        padding-left: 10px;
+        border-left: 2px solid #1d4ed8; 
+        margin-left: 12px;
+        margin-bottom: 10px;
+        opacity: 1 !important; /* Remove fade interference */
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    /* 2. Active State: Show ONLY when .show is present */
+    /* Checks if parent LI has .show OR if menu itself has .show */
+    .navbar-nav .dropdown.show .dropdown-menu,
+    .navbar-nav .dropdown-menu.show {
+        display: block !important; /* Force show */
+        animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .navbar-nav .dropdown-item {
+        color: #666 !important;
+        padding: 10px 15px;
+        font-size: 0.95em;
+        white-space: normal; 
+    }
+
+    .navbar-nav .dropdown-item i {
+        font-size: 1em;
+        color: #666 !important;
+        margin-right: 10px;
+    }
+    
+    /* Mobile Button Styling */
+    .navbar-nav .btn-neutral {
+        background-color: #1d4ed8 !important;
+        color: white !important;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* 4. SECTION SPACING */
+    .row > div[class*="col-"] {
+        margin-bottom: 30px;
+    }
+    
+    .row > div[class*="col-"]:last-child {
+        margin-bottom: 0;
+    }
+
+    .section {
+        padding: 40px 0; 
+    }
+
+    /* 5. FOOTER */
+    .footer .container {
+        text-align: center !important;
+    }
+    
+    .footer nav {
+        float: none !important;
+        display: block;
+    }
+    
+    .footer nav ul {
+        justify-content: center;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .footer .copyright {
+        float: none !important;
+        text-align: center !important;
+        margin-top: 10px;
+    }
+}
+
+/* Dropdown Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 
 /* =========================================
-   IMAGE SHAPE FIX (PERFECT CIRCLES)
+   IMAGE SHAPE FIX & SECURITY
    ========================================= */
 
 .image-wrapper {
@@ -74,25 +283,15 @@
     height: 100% !important;
     object-fit: cover !important; 
     border-radius: 50% !important;
+    pointer-events: none;       
+    -webkit-user-select: none;  
+    user-select: none;          
+    -webkit-user-drag: none; 
 }
 
 .profile-content .image-wrapper {
     width: 160px !important;
     height: 160px !important;
-}
-
-
-/* =========================================
-   MEDIA SECURITY LAYERS
-   ========================================= */
-
-.unstealable-image {
-    pointer-events: none;       
-    -webkit-user-select: none;  
-    -moz-user-select: none;     
-    -ms-user-select: none;      
-    user-select: none;          
-    -webkit-user-drag: none;    
 }
 
 .image-overlay {

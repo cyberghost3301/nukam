@@ -1,70 +1,203 @@
-/* Custom Animations to match React version */
+.contact-page {
+    background-color: #f4f5f7; /* Light gray background for contrast */
+}
+
+/* Header Styling - Deep Blue Brand Color */
+.page-header {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%) !important;
+    min-height: 450px; /* Taller header */
+}
+
+/* Floating Card Container */
+.main-section {
+    position: relative;
+    z-index: 3;
+    margin-top: -120px; /* Moves the card UP to overlap the header */
+    padding-bottom: 50px;
+}
+
+.contact-container {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden; /* Keeps child elements inside rounded corners */
+}
+
+/* Left Side Panel (Blue) */
+.info-panel {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decor Circle in Background (Optional visual flair) */
+.info-panel::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -50px;
+    right: -50px;
+    z-index: 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hyperlinks for contact info */
+.info-item a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.info-item a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.map-box {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Right Side Panel (Form) */
+.bg-white {
+    background-color: #ffffff;
+}
+
+.title {
+    font-weight: 700;
+    color: #333;
+}
+
+/* Custom Input Styling */
+.form-group label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Rounded corners but keeping rectangular shape */
+    height: 45px;
+    padding-left: 15px;
+    transition: all 0.3s;
+    color: #495057;
+}
+
+/* UNIFIED FOCUS STATE: Applies Exact Same Halo to Input, Select, and Textarea */
+/* This ensures no box looks different from the others */
+.form-control:focus,
+select.form-control:focus,
+textarea.form-control:focus {
+    background-color: #fff;
+    border-color: #f96332; /* Orange border */
+    box-shadow: 0 0 0 2px rgba(249, 99, 50, 0.1) !important; /* Exact Orange Halo */
+    outline: none;
+}
+
+/* Custom Dropdown Styling (Removes bland default look) */
+select.form-control {
+    /* Remove default browser arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Add custom SVG arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem; /* Make space for arrow so text doesn't overlap */
+    cursor: pointer;
+}
+
+/* Spacing for Dropdown Options */
+select.form-control option {
+    padding: 12px 15px; /* Adds breathing room inside the dropdown list */
+    margin-bottom: 2px;
+    color: #333;
+    background-color: #fff;
+}
+
+.textarea-custom {
+    height: auto !important;
+    padding-top: 12px; /* Better spacing for text area top text */
+}
+
+/* Social Icons Styling */
+.social-links {
+    display: flex;
+    gap: 15px; /* Adds space between icons */
+}
+
+.social-links .btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    background-color: white;
+    color: #1a237e; /* Brand Blue */
+    transition: transform 0.2s;
+}
+
+.social-links .btn-icon:hover {
+    transform: translateY(-3px);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-section {
+        margin-top: 0; /* Remove overlap on mobile */
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .contact-container {
+        border-radius: 12px; /* Ensure rounded corners on mobile too */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        background: #fff;
+        margin-bottom: 20px;
+    }
+    
+    .info-panel {
+        border-radius: 12px 12px 0 0; /* Rounded top only */
+        padding: 30px !important;
+    }
+
+    .bg-white {
+        border-radius: 0 0 12px 12px; /* Rounded bottom only */
+        padding: 30px !important;
+    }
+
+    /* Adjust typography for mobile */
+    .title {
+        font-size: 1.5em;
+    }
+}
+
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-.animate-fade-in {
-    animation: fadeIn 1s ease-out forwards 0.3s;
-    opacity: 0; /* Start hidden */
-}
-
-.animate-fade-in-delay {
-    animation: fadeIn 1s ease-out forwards 0.6s;
-    opacity: 0;
-}
-
-.animate-slide-left {
-    animation: slideInLeft 1s ease-out forwards 0.9s;
-    opacity: 0;
-}
-
-.animate-scale-in {
-    animation: scaleIn 1s ease-out forwards 1.2s;
-    opacity: 0;
-}
-
-.animate-scale-in-delay {
-    animation: scaleIn 1s ease-out forwards 1.5s;
-    opacity: 0;
-}
-
-.map-container {
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-/* Ensure links in info section don't have default underline unless hovered */
-.info-item a {
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.info-item a:hover {
-    text-decoration: underline;
-    color: #2c2c2c;
-}
-
-/* Form Styles Override for crisp look */
-.card-contact {
-    background: #ffffff;
-    border-radius: 12px;
-}
-
-/* Fix dropdown appearance in Now UI Kit */
-select.form-control {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-left: 15px;
 }

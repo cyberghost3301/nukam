@@ -4,7 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ComponentsComponent } from './components/components.component';
-import { LoginComponent } from './examples/login/login.component'; // Keeping Login for Admin
+import { LoginComponent } from './examples/login/login.component'; 
 
 import { TeamComponent } from './team/team.component';
 import { TeamProfileComponent } from './team-profile/team-profile.component';
@@ -21,7 +21,7 @@ const routes: Routes =[
     { path: '', component: ComponentsComponent, pathMatch: 'full', data: { title: 'Home | Spirecrest' } }, 
     { path: 'index', redirectTo: '', pathMatch: 'full' }, 
 
-    // Admin Portal (Uses the Login Component)
+    // Admin Portal
     { path: 'admin', component: LoginComponent, data: { title: 'Admin Portal | Spirecrest' } }, 
 
     // Admin Dashboard (Protected)
@@ -53,7 +53,8 @@ const routes: Routes =[
     imports: [
         CommonModule,
         BrowserModule,
-        RouterModule.forRoot(routes)
+        // ENABLE SCROLL RESTORATION HERE
+        RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }) 
     ],
     exports: [
     ],
