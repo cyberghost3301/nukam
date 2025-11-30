@@ -1,25 +1,25 @@
 .contact-page {
-    background-color: #f4f5f7; /* Light gray background for contrast */
+    background-color: #f4f5f7; 
 }
 
 /* Header Styling - Deep Blue Brand Color */
 .page-header {
     background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%) !important;
-    min-height: 450px; /* Taller header */
+    min-height: 450px; 
 }
 
 /* Floating Card Container */
 .main-section {
     position: relative;
     z-index: 3;
-    margin-top: -120px; /* Moves the card UP to overlap the header */
+    margin-top: -120px; 
     padding-bottom: 50px;
 }
 
 .contact-container {
     background: #fff;
     border-radius: 12px;
-    overflow: hidden; /* Keeps child elements inside rounded corners */
+    overflow: hidden; 
 }
 
 /* Left Side Panel (Blue) */
@@ -29,7 +29,6 @@
     overflow: hidden;
 }
 
-/* Decor Circle in Background (Optional visual flair) */
 .info-panel::before {
     content: '';
     position: absolute;
@@ -50,7 +49,6 @@
     z-index: 1;
 }
 
-/* Hyperlinks for contact info */
 .info-item a {
     color: white;
     text-decoration: none;
@@ -91,57 +89,55 @@
 .form-control {
     background-color: #f8f9fa;
     border: 1px solid #e0e0e0;
-    border-radius: 8px; /* Rounded corners but keeping rectangular shape */
+    border-radius: 8px; 
     height: 45px;
     padding-left: 15px;
     transition: all 0.3s;
     color: #495057;
 }
 
-/* UNIFIED FOCUS STATE: Applies Exact Same Halo to Input, Select, and Textarea */
-/* This ensures no box looks different from the others */
+/* --- UNIFIED HALO FIX --- */
+/* Ensures textarea gets the EXACT same focus style as inputs */
 .form-control:focus,
 select.form-control:focus,
 textarea.form-control:focus {
     background-color: #fff;
-    border-color: #f96332; /* Orange border */
-    box-shadow: 0 0 0 2px rgba(249, 99, 50, 0.1) !important; /* Exact Orange Halo */
+    border-color: #f96332; 
+    box-shadow: 0 0 0 3px rgba(249, 99, 50, 0.2) !important; /* Stronger, uniform halo */
     outline: none;
 }
 
-/* Custom Dropdown Styling (Removes bland default look) */
+/* Custom Dropdown Styling */
 select.form-control {
-    /* Remove default browser arrow */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    
-    /* Add custom SVG arrow */
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1em;
-    padding-right: 2.5rem; /* Make space for arrow so text doesn't overlap */
+    padding-right: 2.5rem; 
     cursor: pointer;
 }
 
-/* Spacing for Dropdown Options */
+/* --- DROPDOWN OPTION SPACING FIX --- */
 select.form-control option {
-    padding: 12px 15px; /* Adds breathing room inside the dropdown list */
-    margin-bottom: 2px;
+    padding: 15px; /* Adds breathing room inside the dropdown list */
+    margin-bottom: 5px;
     color: #333;
     background-color: #fff;
+    font-size: 1.1em; /* Make text slightly larger/clearer */
 }
 
 .textarea-custom {
     height: auto !important;
-    padding-top: 12px; /* Better spacing for text area top text */
+    padding-top: 12px; 
 }
 
 /* Social Icons Styling */
 .social-links {
     display: flex;
-    gap: 15px; /* Adds space between icons */
+    gap: 15px; 
 }
 
 .social-links .btn-icon {
@@ -153,7 +149,7 @@ select.form-control option {
     align-items: center;
     font-size: 1.2em;
     background-color: white;
-    color: #1a237e; /* Brand Blue */
+    color: #1a237e; 
     transition: transform 0.2s;
 }
 
@@ -164,29 +160,28 @@ select.form-control option {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .main-section {
-        margin-top: 0; /* Remove overlap on mobile */
+        margin-top: 0; 
         padding-top: 30px;
         padding-bottom: 30px;
     }
     
     .contact-container {
-        border-radius: 12px; /* Ensure rounded corners on mobile too */
+        border-radius: 12px; 
         box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         background: #fff;
         margin-bottom: 20px;
     }
     
     .info-panel {
-        border-radius: 12px 12px 0 0; /* Rounded top only */
+        border-radius: 12px 12px 0 0; 
         padding: 30px !important;
     }
 
     .bg-white {
-        border-radius: 0 0 12px 12px; /* Rounded bottom only */
+        border-radius: 0 0 12px 12px; 
         padding: 30px !important;
     }
 
-    /* Adjust typography for mobile */
     .title {
         font-size: 1.5em;
     }
