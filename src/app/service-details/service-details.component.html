@@ -14,66 +14,123 @@
     </div>
 
     <!-- Content -->
-    <div class="section">
+    <div class="section" *ngIf="currentService">
         <div class="container">
-            <div class="row" *ngIf="currentService">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h3 class="title">Overview</h3>
-                    <h5 class="description">{{ currentService.description }}</h5>
-                </div>
-            </div>
-            
-            <div class="separator separator-primary"></div>
-
-            <div class="section-story-overview" *ngIf="currentService">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="image-container" [style.background-image]="'url(' + currentService.img + ')'" style="border-radius: 12px; height: 300px; background-size: cover; background-position: center;">
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="image-container" style="background-image: url('assets/img/bg7.jpg'); border-radius: 12px; height: 300px; background-size: cover; background-position: center;">
-                        </div>
-                    </div>
-                </div>
+            <div class="row">
                 
-                <div class="row mt-5">
-                    <div class="col-md-8 ml-auto mr-auto">
-                        <h3 class="title text-center">Key Features & Offerings</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item" *ngFor="let feature of currentService.features">
-                                <i class="now-ui-icons ui-1_check text-success mr-3"></i> 
-                                {{ feature }}
-                            </li>
-                        </ul>
+                <!-- LEFT COLUMN: Main Content (8 cols) -->
+                <div class="col-lg-8">
+                    
+                    <!-- Overview -->
+                    <div class="content-block mb-5">
+                        <h3 class="section-title">Overview</h3>
+                        <p class="lead-text">{{ currentService.description }}</p>
+                    </div>
+
+                    <!-- Zig-Zag Section A: Text Left, Image Right -->
+                    <div class="row align-items-center mb-5 zigzag-section">
+                        <div class="col-md-6 order-2 order-md-1">
+                            <h4 class="zigzag-title">Expert Solutions</h4>
+                            <p class="zigzag-text">Our team of specialists brings years of industry experience to every project. We use cutting-edge technology and best practices to deliver solutions that exceed expectations.</p>
+                            <ul class="check-list">
+                                <li><i class="now-ui-icons ui-1_check text-success"></i> Industry-leading expertise</li>
+                                <li><i class="now-ui-icons ui-1_check text-success"></i> Customized approach</li>
+                                <li><i class="now-ui-icons ui-1_check text-success"></i> Quality assurance</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+                            <div class="zigzag-image" [style.background-image]="'url(' + currentService.img + ')'"></div>
+                        </div>
+                    </div>
+
+                    <!-- Zig-Zag Section B: Image Left, Text Right -->
+                    <div class="row align-items-center mb-5 zigzag-section">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="zigzag-image" style="background-image: url('assets/img/bg7.jpg')"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="zigzag-title">End-to-End Support</h4>
+                            <p class="zigzag-text">From initial consultation to final deployment and beyond, we provide comprehensive support at every stage. Our dedicated team ensures seamless implementation and ongoing maintenance.</p>
+                            <ul class="check-list">
+                                <li><i class="now-ui-icons ui-1_check text-success"></i> 24/7 technical support</li>
+                                <li><i class="now-ui-icons ui-1_check text-success"></i> Regular maintenance</li>
+                                <li><i class="now-ui-icons ui-1_check text-success"></i> Continuous optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature Grid -->
+                    <div class="features-section">
+                        <h3 class="section-title">Key Features & Offerings</h3>
+                        <div class="row">
+                            <div class="col-md-4 col-6" *ngFor="let feature of currentService.features">
+                                <div class="feature-card">
+                                    <i class="now-ui-icons ui-1_check feature-icon"></i>
+                                    <span class="feature-text">{{ feature }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN: Sticky Sidebar (4 cols) -->
+                <div class="col-lg-4">
+                    <div class="sidebar-wrapper">
+                        
+                        <!-- Request Quote Card -->
+                        <div class="card quote-card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Request a Quote</h4>
+                                <p class="text-center text-muted mb-4">Get a free consultation for {{ currentService.title }}</p>
+                                
+                                <a href="https://wa.me/919250974145?text=I%27m%20interested%20in%20{{currentService?.title}}" 
+                                   target="_blank" 
+                                   class="btn btn-success btn-block btn-lg mb-3">
+                                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
+                                </a>
+                                
+                                <a [routerLink]="['/contact']" class="btn btn-outline-primary btn-block">
+                                    <i class="now-ui-icons ui-1_email-85 mr-2"></i> Contact Form
+                                </a>
+                                
+                                <hr class="my-4">
+                                
+                                <div class="contact-info">
+                                    <p><i class="now-ui-icons tech_mobile mr-2"></i> +91 9250974145</p>
+                                    <p><i class="now-ui-icons ui-1_email-85 mr-2"></i> info@spirecrest.in</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Services Card -->
+                        <div class="card services-card mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Other Services</h5>
+                                <ul class="other-services-list">
+                                    <li><a [routerLink]="['/service', 'surveillance']">Advanced Surveillance</a></li>
+                                    <li><a [routerLink]="['/service', 'automation']">Smart Automation</a></li>
+                                    <li><a [routerLink]="['/service', 'software']">Web, App & Software</a></li>
+                                    <li><a [routerLink]="['/service', 'network']">Networking & Cloud</a></li>
+                                    <li><a [routerLink]="['/service', 'solar']">Solar Power Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
 
-            <!-- Error State -->
-            <div class="text-center" *ngIf="!currentService">
-                <h3>Service not found.</h3>
-                <a [routerLink]="['/index']" class="btn btn-primary btn-round">Back Home</a>
             </div>
-
-            <!-- CTA -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Interested in this service?</h4>
-                    <a href="https://wa.me/919250974145?text=I%27m%20interested%20in%20{{currentService?.title}}" target="_blank" class="btn btn-success btn-round btn-lg">
-                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                    </a>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <footer class="footer" data-background-color="black">
+    <!-- Error State -->
+    <div class="section text-center" *ngIf="!currentService">
         <div class="container">
-            <div class="copyright">
-                &copy; 2025, Spirecrest Solutions Pvt. Ltd.
-            </div>
+            <h3>Service not found.</h3>
+            <a [routerLink]="['/']" class="btn btn-primary btn-round">Back Home</a>
         </div>
-    </footer>
+    </div>
+
+    <app-footer></app-footer>
 </div>

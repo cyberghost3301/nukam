@@ -1,0 +1,221 @@
+<!-- =========================================
+   CONTACT PAGE DESIGN VARIANTS
+   Use these as alternatives to the main design
+   ========================================= -->
+
+
+<!-- =========================================
+   VARIANT 1: SPLIT SCREEN DESIGN
+   Left: Dark info panel | Right: White form
+   ========================================= -->
+
+<!--
+<div class="wrapper contact-split">
+    <div class="row no-gutters min-vh-100">
+        
+        <div class="col-lg-5 dark-panel">
+            <div class="panel-content">
+                <h1 class="brand-title">SPIRECREST</h1>
+                <h2 class="main-title">Let's Build Something Amazing Together</h2>
+                
+                <div class="contact-info">
+                    <div class="info-row">
+                        <i class="now-ui-icons location_pin"></i>
+                        <span>Lucknow, Uttar Pradesh, India</span>
+                    </div>
+                    <div class="info-row">
+                        <i class="now-ui-icons tech_mobile"></i>
+                        <span>+91 9250974145</span>
+                    </div>
+                    <div class="info-row">
+                        <i class="now-ui-icons ui-1_email-85"></i>
+                        <span>info@spirecrest.in</span>
+                    </div>
+                </div>
+                
+                <div class="social-row">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-7 white-panel">
+            <div class="form-wrapper">
+                <h3>Send us a Message</h3>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" placeholder="Your Name" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" placeholder="Your Email" class="form-control">
+                        </div>
+                    </div>
+                    <input type="text" placeholder="Subject" class="form-control">
+                    <textarea placeholder="Your Message" rows="5" class="form-control"></textarea>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+SCSS for Split Screen:
+
+.contact-split {
+    .dark-panel {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        display: flex;
+        align-items: center;
+        padding: 60px;
+    }
+    
+    .panel-content {
+        color: #fff;
+    }
+    
+    .brand-title {
+        font-size: 1rem;
+        letter-spacing: 5px;
+        color: #f96332;
+        margin-bottom: 30px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 40px;
+    }
+    
+    .white-panel {
+        background: #fff;
+        display: flex;
+        align-items: center;
+        padding: 60px;
+    }
+}
+-->
+
+
+<!-- =========================================
+   VARIANT 2: MAP BOTTOM DESIGN
+   Contact cards on top, full-width map below
+   ========================================= -->
+
+<!--
+<div class="wrapper contact-map-bottom">
+    
+    <div class="page-header page-header-small">
+        <div class="page-header-image" style="background-image: url('assets/img/bg11.jpg');"></div>
+        <div class="content-center">
+            <h1 class="title">Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div class="icon"><i class="now-ui-icons location_pin"></i></div>
+                        <h4>Visit Us</h4>
+                        <p>Lucknow, Uttar Pradesh, India</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div class="icon"><i class="now-ui-icons tech_mobile"></i></div>
+                        <h4>Call Us</h4>
+                        <p>+91 9250974145</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div class="icon"><i class="now-ui-icons ui-1_email-85"></i></div>
+                        <h4>Email Us</h4>
+                        <p>info@spirecrest.in</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center mb-4">Send a Message</h3>
+                            <form>
+                                ... form fields ...
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="full-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=..."
+            width="100%" 
+            height="400" 
+            style="border:0;">
+        </iframe>
+    </div>
+
+</div>
+
+SCSS for Map Bottom:
+
+.contact-map-bottom {
+    .info-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        margin-top: -80px;
+        position: relative;
+        z-index: 10;
+        
+        .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f96332 0%, #ff6b35 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            
+            i {
+                color: #fff;
+                font-size: 1.5rem;
+            }
+        }
+        
+        h4 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    }
+    
+    .full-map {
+        width: 100%;
+        margin-top: 50px;
+        
+        iframe {
+            display: block;
+        }
+    }
+}
+-->

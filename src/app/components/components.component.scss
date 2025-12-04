@@ -1,28 +1,27 @@
 /* =========================================
-   LOCALIZED HOME PAGE STYLES (HIERARCHY FIX)
+   HOME PAGE LOCAL STYLES (HIERARCHY FIX)
    ========================================= */
 
-/* 1. "At SSPL..." Subheading */
-/* Goal: Black text, but NOT bold (Readable) */
+/* 1. "At SSPL..." Subheading - NOT BOLD */
 h5.description {
     color: #000000 !important;
-    font-weight: 400 !important; /* Normal weight */
+    font-weight: 400 !important;
     opacity: 1 !important;
 }
 
 /* 2. Service Cards */
 .card-body {
-    /* Title: Make it THICK and BLACK so it doesn't look faded */
+    /* Title: BLACK and EXTRA BOLD for visibility */
     .info-title {
         color: #000000 !important;
-        font-weight: 800 !important; /* Extra Bold */
+        font-weight: 800 !important;
         margin-bottom: 10px;
     }
 
-    /* Description: Make it BLACK but THIN/NORMAL so it doesn't compete */
+    /* Description: Normal weight */
     p.description {
         color: #000000 !important;
-        font-weight: 400 !important; /* Normal weight */
+        font-weight: 400 !important;
         opacity: 1 !important;
         font-size: 1rem !important;
     }
@@ -34,12 +33,17 @@ h5.description {
     h4.title a {
         color: #000000 !important;
         font-weight: 800 !important;
+        text-decoration: none;
+        
+        &:hover {
+            color: #2962ff !important;
+        }
     }
 
     /* Bio Description: Black but Normal */
     p.description {
         color: #000000 !important;
-        font-weight: 400 !important; /* Normal weight */
+        font-weight: 400 !important;
         opacity: 1 !important;
     }
     
@@ -60,4 +64,10 @@ h5.description {
     font-weight: 700 !important;
     text-transform: uppercase;
     box-shadow: 0 5px 15px rgba(41, 98, 255, 0.4) !important;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(41, 98, 255, 0.6) !important;
+    }
 }

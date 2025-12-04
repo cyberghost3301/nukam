@@ -142,6 +142,34 @@ export class ServiceDetailsComponent implements OnInit {
         'Brand Identity Design'
       ],
       img: 'assets/img/bg4.jpg'
+    },
+    'photography': {
+      title: 'Photography & Cinematography',
+      icon: 'media-1_camera-compact',
+      description: 'Capturing moments with cinematic precision. We specialize in corporate events, high-end product shoots, and stunning aerial videography.',
+      features: [
+        'Corporate Event Coverage',
+        'High-End Product Photography',
+        '4K Drone Videography',
+        'Wedding & Social Events',
+        'Commercial Advertisements',
+        'Post-Production & Editing'
+      ],
+      img: 'assets/img/bg5.jpg'
+    },
+    'cybersecurity': {
+      title: 'Cyber Security & Audits',
+      icon: 'objects_key-25',
+      description: 'Safeguarding your digital infrastructure with comprehensive security solutions and compliance audits.',
+      features: [
+        'Vulnerability Assessments',
+        'Network Penetration Testing',
+        'Security Compliance Audits',
+        'Incident Response Planning',
+        'Employee Security Training',
+        'Data Protection Strategy'
+      ],
+      img: 'assets/img/bg11.jpg'
     }
   };
 

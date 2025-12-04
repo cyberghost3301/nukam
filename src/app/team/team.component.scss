@@ -1,0 +1,45 @@
+/* =========================================
+   TEAM PAGE LOCAL STYLES
+   ========================================= */
+
+/* Team Player Styling */
+.team-player {
+    
+    /* Leader Names - BLACK */
+    .title a,
+    h4.title a {
+        color: #000000 !important;
+        font-weight: 800 !important;
+        text-decoration: none;
+        
+        &:hover {
+            color: #2962ff !important;
+        }
+    }
+    
+    /* Job Titles - BLUE */
+    .category,
+    p.category {
+        color: #2962ff !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Descriptions - BLACK */
+    .description,
+    p.description {
+        color: #000000 !important;
+        font-weight: 400 !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Page Header */
+.page-header {
+    min-height: 400px;
+}
+
+/* Section Title */
+.section-team .title {
+    color: #000000 !important;
+    font-weight: 700;
+}

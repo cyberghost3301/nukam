@@ -1,0 +1,240 @@
+/* =========================================
+   SERVICE DETAILS PAGE - PRO REDESIGN
+   ========================================= */
+
+/* Page Header */
+.page-header {
+    min-height: 450px;
+}
+
+/* Section Titles */
+.section-title {
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(135deg, #f96332 0%, #ff6b35 100%);
+        border-radius: 2px;
+    }
+}
+
+.lead-text {
+    font-size: 1.15rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* =========================================
+   ZIG-ZAG SECTIONS
+   ========================================= */
+.zigzag-section {
+    padding: 20px 0;
+}
+
+.zigzag-image {
+    height: 280px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.zigzag-title {
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.zigzag-text {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        padding: 8px 0;
+        color: #333;
+        font-weight: 500;
+        
+        i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* =========================================
+   FEATURE GRID
+   ========================================= */
+.features-section {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    
+    &:hover {
+        background: #fff;
+        border-color: #f96332;
+        box-shadow: 0 5px 20px rgba(249, 99, 50, 0.15);
+        transform: translateY(-3px);
+    }
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    color: #28a745;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   STICKY SIDEBAR
+   ========================================= */
+.sidebar-wrapper {
+    position: sticky;
+    top: 100px;
+}
+
+.quote-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    
+    .card-body {
+        padding: 30px;
+    }
+    
+    .card-title {
+        color: #000;
+        font-weight: 700;
+    }
+}
+
+.contact-info {
+    p {
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        
+        i {
+            color: #f96332;
+            width: 20px;
+        }
+    }
+}
+
+.services-card {
+    border: none;
+    border-radius: 15px;
+    background: #f8f9fa;
+    
+    .card-body {
+        padding: 25px;
+    }
+    
+    .card-title {
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+}
+
+.other-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        padding: 10px 0;
+        border-bottom: 1px solid #e9ecef;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            
+            &:hover {
+                color: #f96332;
+            }
+        }
+    }
+}
+
+/* Button Styles */
+.btn-success {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 12px 25px !important;
+    font-weight: 600 !important;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    }
+}
+
+.btn-outline-primary {
+    border: 2px solid #f96332 !important;
+    color: #f96332 !important;
+    background: transparent !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    
+    &:hover {
+        background: #f96332 !important;
+        color: #fff !important;
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 991px) {
+    .sidebar-wrapper {
+        position: static;
+        margin-top: 40px;
+    }
+    
+    .zigzag-image {
+        height: 220px;
+    }
+}

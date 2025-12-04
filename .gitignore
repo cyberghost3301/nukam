@@ -41,3 +41,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Replit
+.config/
+.upm/
+.cache/
+.replit
+replit.nix

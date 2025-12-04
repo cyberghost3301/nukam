@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================================
+   GLOBAL STYLES (CLEANED UP)
+   Only essential global styles remain here
+   ========================================= */
+
 @import "~bootstrap/scss/bootstrap.scss";
 
 /* =========================================
@@ -9,7 +13,6 @@
     position: absolute !important;
     top: 50% !important; 
     left: 50% !important;
-    right: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: 100% !important;
     z-index: 2;
@@ -34,171 +37,40 @@
 }
 
 /* =========================================
-   MOBILE OPTIMIZATION ENGINE (Max Width 991px)
+   MOBILE HERO CENTERING
    ========================================= */
 @media screen and (max-width: 991px) {
-    
-    /* 1. HERO SECTION ADJUSTMENTS */
     .page-header .content-center {
-        top: 35% !important; 
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
         width: 100% !important;
-        padding: 0 15px; 
+        padding: 0 15px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .page-header .content-center .n-logo {
+        margin: 0 auto !important;
+        display: block !important;
     }
 
     .page-header h1.title, 
     .page-header .h1-seo {
         font-size: 2.0em !important; 
-        margin-top: 15px !important; 
+        margin-top: 15px !important;
+        text-align: center !important;
     }
 
-    .page-header h3 {
+    .page-header h3,
+    .page-header .h3-seo {
         font-size: 1.1em !important; 
         line-height: 1.4;
+        text-align: center !important;
+        margin: 0 auto !important;
     }
-
-    /* 2. NAVBAR TOGGLER */
-    .navbar-translate {
-        width: 100%;
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-        position: relative;
-        z-index: 1061; 
-    }
-
-    .navbar-toggler {
-        display: block !important;
-        cursor: pointer;
-        margin-right: 0;
-        padding: 0;
-        border: none;
-        background: transparent;
-    }
-    
-    .navbar-toggler-bar {
-        background-color: #fff !important; 
-        display: block !important;
-        width: 24px; 
-        height: 2px;
-        border-radius: 1px;
-    }
-
-    .navbar-toggler-bar + .navbar-toggler-bar {
-        margin-top: 5px !important;
-    }
-
-    /* 3. MOBILE MENU DRAWER */
-    .navbar-collapse {
-        position: fixed !important;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 300px; /* Sidebar width */
-        height: 100vh; /* Full Height */
-        background: #ffffff !important; 
-        z-index: 2000;
-        padding-top: 80px; 
-        padding-left: 25px;
-        padding-right: 25px;
-        overflow-y: auto; 
-        display: block !important;
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(100%); 
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .nav-open .navbar-collapse {
-        transform: translateX(0) !important;
-    }
-
-    /* Close Button */
-    .mobile-close {
-        position: absolute;
-        top: 24px; 
-        right: 20px; 
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 2100;
-        padding: 5px;
-    }
-
-    .mobile-close i {
-        font-size: 1.8em;
-        color: #333; 
-        font-weight: bold;
-    }
-
-    /* Mobile Links Styling */
-    .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        margin-top: 10px;
-    }
-    
-    .navbar-nav .nav-item {
-        margin-bottom: 5px;
-        text-align: left;
-        list-style: none;
-    }
-    
-    .navbar-nav .nav-link {
-        color: #333 !important; 
-        font-size: 1.1em;
-        font-weight: 600;
-        padding: 12px 0;
-        border-bottom: 1px solid #f0f0f0; 
-        display: flex;
-        align-items: center;
-    }
-    
-    /* Mobile Dropdown Fix */
-    .navbar-nav .dropdown-menu {
-        display: none !important;
-        position: static !important;
-        float: none !important;
-        width: auto !important;
-        background-color: transparent !important;
-        border: 0;
-        box-shadow: none;
-        padding-left: 10px;
-        border-left: 2px solid #2962ff; /* Brand Blue */
-        margin-left: 12px;
-        margin-bottom: 10px;
-    }
-
-    .navbar-nav .dropdown.show .dropdown-menu,
-    .navbar-nav .dropdown-menu.show {
-        display: block !important;
-        animation: fadeIn 0.2s ease-in-out;
-    }
-
-    .navbar-nav .dropdown-item {
-        color: #666 !important;
-        padding: 10px 15px;
-        font-size: 0.95em;
-        white-space: normal; 
-    }
-    
-    .navbar-nav .btn-neutral {
-        background-color: #2962ff !important;
-        color: white !important;
-        margin-top: 20px;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* 4. FOOTER ADJUSTMENTS */
-    .footer .container { text-align: center !important; }
-    .footer nav { float: none !important; display: block; }
-    .footer nav ul { justify-content: center; padding: 0; display: flex; flex-wrap: wrap; }
-    .footer .copyright { float: none !important; text-align: center !important; margin-top: 10px; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================
@@ -244,7 +116,7 @@
 }
 
 /* =========================================
-   "SEE FULL TEAM" BUTTON
+   GLOBAL BUTTON OVERRIDES
    ========================================= */
 
 .btn-outline-primary {
@@ -264,152 +136,4 @@
 .btn-outline-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(41, 98, 255, 0.6) !important;
-}
-
-/* =========================================
-   ABOUT PAGE & LAYOUT REPAIRS
-   ========================================= */
-
-/* 1. DESKTOP: Controlled Overlap (Restored) */
-@media screen and (min-width: 992px) {
-    .section-story-overview .image-container {
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        z-index: 1; 
-    }
-
-    .section-story-overview .blockquote {
-        margin-top: -80px !important; 
-        margin-right: 40px !important; 
-        margin-left: 40px !important; 
-        position: relative;
-        z-index: 10; 
-        background-color: #ffffff;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-        min-height: 100px;
-        border: none;
-        border-left: 5px solid #2962ff;
-    }
-}
-
-/* 2. MOBILE: Clean Stack (No Overlap) */
-@media screen and (max-width: 991px) {
-    .section-story-overview .image-container {
-        width: 100% !important;
-        height: 280px !important;
-        margin-bottom: 0 !important;
-        border-radius: 8px 8px 0 0; 
-    }
-
-    .section-story-overview .blockquote {
-        margin-top: 0 !important;
-        margin-bottom: 30px !important;
-        background-color: #f8f9fa; 
-        border-left: 5px solid #2962ff; 
-        border-radius: 0 0 8px 8px; 
-        padding: 20px;
-    }
-}
-
-/* =========================================
-   FOOTER ICONS (SLEEK)
-   ========================================= */
-
-.footer-icon {
-    display: inline-block;
-    margin-left: 20px;
-    font-size: 1.3rem;
-    transition: transform 0.2s ease, opacity 0.2s;
-    opacity: 0.8;
-    color: #555;
-}
-
-.footer-icon:hover {
-    transform: translateY(-3px);
-    opacity: 1;
-}
-
-/* Brand Colors */
-.icon-twitter { color: #1DA1F2 !important; }
-.icon-facebook { color: #1877F2 !important; }
-.icon-linkedin { color: #0077b5 !important; }
-.icon-instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent; /* Fallback */
-    display: inline-block;
-}
-
-/* =========================================
-   BLACK TEXT ENFORCEMENT (SAFE ZONE)
-   ========================================= */
-/* This only targets the Home Page sections by ID to prevent global breakage */
-
-#services .description,
-#team .description,
-#services .info-title,
-#team .title,
-#team h4 a {
-    color: #000000 !important; /* Force Black */
-    opacity: 1 !important;
-    font-weight: 500;
-}
-
-/* Specific fix for "Our Specializations" subheading */
-#services h5.description {
-    color: #000000 !important;
-    font-weight: 600;
-}
-
-/* =========================================
-   ABOUT PAGE QUOTE BOX RESTORATION
-   ========================================= */
-
-/* Desktop: Overlap Style */
-@media screen and (min-width: 992px) {
-    .section-story-overview .image-container {
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        z-index: 1; 
-    }
-
-    .section-story-overview .blockquote {
-        margin-top: -80px !important; /* The Overlap Magic */
-        margin-right: 40px !important; 
-        margin-left: 40px !important; 
-        position: relative;
-        z-index: 10; 
-        background-color: #ffffff;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-        min-height: 100px;
-        border: none;
-        border-left: 5px solid #2962ff;
-    }
-}
-
-/* Mobile: Clean Stack */
-@media screen and (max-width: 991px) {
-    .section-story-overview .image-container {
-        width: 100% !important;
-        height: 280px !important;
-        margin-bottom: 0 !important; /* Remove gap */
-        border-radius: 8px 8px 0 0; 
-    }
-
-    .section-story-overview .blockquote {
-        margin-top: 0 !important; /* No overlap */
-        margin-bottom: 30px !important;
-        background-color: #f8f9fa; 
-        border-left: 5px solid #2962ff; 
-        border-radius: 0 0 8px 8px; 
-        padding: 20px;
-    }
 }

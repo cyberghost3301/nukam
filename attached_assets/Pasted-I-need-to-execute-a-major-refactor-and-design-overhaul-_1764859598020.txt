@@ -1,0 +1,100 @@
+I need to execute a major refactor and design overhaul of the Angular project. Please perform the following 7 steps strictly in order.
+
+### GOAL
+Localize styles to protect components, fix specific UI issues on Home/About/Team pages, add new service content, and completely modernize the "Service Details" and "Contact" pages with new layouts.
+
+---
+
+### STEP 1: Navbar & Footer Localization (Protection)
+Move logic out of `styles.scss` to prevent global conflicts.
+
+1. **Update `src/app/shared/navbar/navbar.component.scss`**:
+   - Move all Mobile Menu styles here (fixed position drawer, right slide-in animation, hamburger toggler).
+   - Ensure `.navbar-collapse` has `max-height: 100vh` and `overflow-y: auto` for mobile.
+   - Style the Mobile Links (spacing, borders) and Dropdowns.
+
+2. **Update `src/app/shared/footer/footer.component.scss`**:
+   - Add Mobile Alignment media queries (center text on mobile).
+   - Add `.footer-icon` styles and specific brand color classes (`.icon-twitter`, `.icon-facebook`, etc.).
+
+---
+
+### STEP 2: Home Page (ComponentsComponent) Content & Styling
+Fix contrast, remove icons, and add new services.
+
+1. **Update `src/app/components/components.component.html`**:
+   - **Remove Icons:** Delete the `<div class="icon ...">` elements from ALL service cards. Keep only Title and Description.
+   - **Add New Service Row:** Append a new row with these 2 cards (No icons):
+     - **Card 1 Title:** Photography & Cinematography
+     - **Card 1 Desc:** Capturing moments with cinematic precision. We specialize in corporate events, high-end product shoots, and 4K drone videography.
+     - **Card 2 Title:** Cyber Security & Audits
+     - **Card 2 Desc:** Safeguarding your digital infrastructure. We provide vulnerability assessments, network penetration testing, and security compliance audits.
+
+2. **Update `src/app/components/components.component.scss`**:
+   - Add **LOCAL** rules (do not put in global styles):
+     - `h5.description` (The "At SSPL..." subheading) -> Color: **#000000** (Black), Weight: 400.
+     - `.info-title` (Service Card Titles) -> Color: **#000000**, Weight: 800 (Extra Bold).
+     - `p.description` (Service Card Text) -> Color: **#000000**, Weight: 400 (Normal).
+     - `.team-player .title a` (Leader Names) -> Color: **#000000**, Weight: 800.
+     - `.team-player .category` (Job Titles) -> Color: **#2962ff** (Blue), Weight: 700.
+     - `.team-player .description` (Leader Bio) -> Color: **#000000**, Weight: 400.
+
+---
+
+### STEP 3: Team Page Styling
+Fix specific text colors on the dedicated Team page.
+
+1. **Update `src/app/team/team.component.scss`**:
+   - Ensure Leader Names are **#000000** (Black).
+   - Ensure Job Titles are **#2962ff** (Blue).
+   - Ensure Descriptions are **#000000** (Black).
+
+---
+
+### STEP 4: About Page Quote Box Restoration
+Fix the overlap logic.
+
+1. **Update `src/app/about/about.component.html`**:
+   - Structure the "Story Overview" so Column 1 contains `image-left` AND `.blockquote`. Column 2 contains `image-right` and text.
+
+2. **Update `src/app/about/about.component.scss`**:
+   - **Desktop (min-width 992px):** `.blockquote` must have `margin-top: -100px`, `z-index: 10`, `position: relative`, `background: #fff`.
+   - **Mobile (max-width 991px):** `.blockquote` must have `margin-top: 0`, `margin-bottom: 40px`, `background: #f8f9fa`.
+
+---
+
+### STEP 5: Service Details Page Redesign (The "Pro" Makeover)
+Replace the boring text block with a "Zig-Zag" layout and Sticky Sidebar.
+
+1. **Update `src/app/service-details/service-details.component.html`**:
+   - **Layout:** Use a `row`. Left col (8) is content, Right col (4) is Sidebar.
+   - **Zig-Zag Content:** Break the description into two sections.
+     - *Section A:* Text Left, Image Right.
+     - *Section B:* Image Left, Text Right.
+   - **Feature Grid:** Below the text, add a 3-column grid of "Key Features" (use placeholder text like "Night Vision", "Cloud Storage" etc. for now).
+   - **Sticky Sidebar:** In the Right col, create a "Request Quote" card that uses `position: sticky; top: 100px;`.
+
+---
+
+### STEP 6: Contact Page Redesign (Modernize)
+Implement the "Floating Glass" design.
+
+1. **Update `src/app/contact/contact.component.html`**:
+   - **Background:** Use a full-width container with a high-quality tech/city background image (darkened).
+   - **Foreground:** Place a single `card` in the center using "Glassmorphism" (semi-transparent white/blur).
+   - **Split Content:** Inside the card, use a row:
+     - *Left Col:* Contact Info (Address, Phone, Emails, Socials).
+     - *Right Col:* The Contact Form (Clean inputs).
+
+2. **Create `src/app/contact/contact-variants.html` (New File)**:
+   - Paste the code for the **"Split Screen"** variant (Left dark/Right white) and the **"Map Bottom"** variant here as commented-out code so I can use them later if I prefer.
+
+---
+
+### STEP 7: Global Cleanup
+1. **Update `src/styles.scss`**:
+   - Remove ALL styles that were moved to components (Navbar, Mobile Menu, Footer).
+   - Remove any global color overrides for `p` or `.description` (to prevent breaking Navbar/Hero).
+   - Keep only: Bootstrap imports, Global Hero alignment (`.page-header`), and Button overrides.
+
+Execute these changes now.
