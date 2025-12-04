@@ -5,7 +5,6 @@
    HEADER ALIGNMENT & RESPONSIVENESS
    ========================================= */
 
-/* Desktop Default */
 .page-header .content-center {
     position: absolute !important;
     top: 50% !important; 
@@ -41,7 +40,6 @@
     
     /* 1. HERO SECTION ADJUSTMENTS */
     .page-header .content-center {
-        /* CHANGED: 55% -> 35% to pull content UP on mobile */
         top: 35% !important; 
         width: 100% !important;
         padding: 0 15px; 
@@ -58,7 +56,7 @@
         line-height: 1.4;
     }
 
-    /* 2. NAVBAR TOGGLER (Hamburger) */
+    /* 2. NAVBAR TOGGLER */
     .navbar-translate {
         width: 100%;
         display: flex;
@@ -89,7 +87,7 @@
         margin-top: 5px !important;
     }
 
-    /* 3. MOBILE MENU DRAWER (Clean White Theme) */
+    /* 3. MOBILE MENU DRAWER */
     .navbar-collapse {
         position: fixed !important;
         top: 0;
@@ -98,26 +96,22 @@
         width: 300px; /* Sidebar width */
         height: 100vh; /* Full Height */
         background: #ffffff !important; 
-        z-index: 2000; /* Highest level */
+        z-index: 2000;
         padding-top: 80px; 
         padding-left: 25px;
         padding-right: 25px;
         overflow-y: auto; 
-        
         display: block !important;
-        
-        /* Animation: Slide in from Right */
         transition: transform 0.3s ease-in-out;
         transform: translateX(100%); 
-        box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
     }
 
-    /* Slide in */
     .nav-open .navbar-collapse {
         transform: translateX(0) !important;
     }
 
-    /* --- CLOSE BUTTON ("X") --- */
+    /* Close Button */
     .mobile-close {
         position: absolute;
         top: 24px; 
@@ -159,41 +153,24 @@
         align-items: center;
     }
     
-    .navbar-nav .nav-link i {
-        margin-right: 15px;
-        color: #1d4ed8; 
-        font-size: 1.2em;
-        vertical-align: middle;
-        min-width: 25px;
-        text-align: center;
-    }
-
-    /* --- MOBILE DROPDOWN FIX (STRICT TOGGLE) --- */
-    
-    /* 1. Default State: Completely Hidden & Collapsed */
+    /* Mobile Dropdown Fix */
     .navbar-nav .dropdown-menu {
-        display: none !important; /* Force hide */
+        display: none !important;
         position: static !important;
         float: none !important;
         width: auto !important;
-        margin-top: 0;
         background-color: transparent !important;
         border: 0;
         box-shadow: none;
         padding-left: 10px;
-        border-left: 2px solid #1d4ed8; 
+        border-left: 2px solid #2962ff; /* Brand Blue */
         margin-left: 12px;
         margin-bottom: 10px;
-        opacity: 1 !important; /* Remove fade interference */
-        visibility: visible !important;
-        transform: none !important;
     }
 
-    /* 2. Active State: Show ONLY when .show is present */
-    /* Checks if parent LI has .show OR if menu itself has .show */
     .navbar-nav .dropdown.show .dropdown-menu,
     .navbar-nav .dropdown-menu.show {
-        display: block !important; /* Force show */
+        display: block !important;
         animation: fadeIn 0.2s ease-in-out;
     }
 
@@ -203,66 +180,26 @@
         font-size: 0.95em;
         white-space: normal; 
     }
-
-    .navbar-nav .dropdown-item i {
-        font-size: 1em;
-        color: #666 !important;
-        margin-right: 10px;
-    }
     
-    /* Mobile Button Styling */
     .navbar-nav .btn-neutral {
-        background-color: #1d4ed8 !important;
+        background-color: #2962ff !important;
         color: white !important;
         margin-top: 20px;
         width: 100%;
         text-align: center;
-        justify-content: center;
     }
 
-    /* 4. SECTION SPACING */
-    .row > div[class*="col-"] {
-        margin-bottom: 30px;
-    }
-    
-    .row > div[class*="col-"]:last-child {
-        margin-bottom: 0;
-    }
-
-    .section {
-        padding: 40px 0; 
-    }
-
-    /* 5. FOOTER */
-    .footer .container {
-        text-align: center !important;
-    }
-    
-    .footer nav {
-        float: none !important;
-        display: block;
-    }
-    
-    .footer nav ul {
-        justify-content: center;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .footer .copyright {
-        float: none !important;
-        text-align: center !important;
-        margin-top: 10px;
-    }
+    /* 4. FOOTER ADJUSTMENTS */
+    .footer .container { text-align: center !important; }
+    .footer nav { float: none !important; display: block; }
+    .footer nav ul { justify-content: center; padding: 0; display: flex; flex-wrap: wrap; }
+    .footer .copyright { float: none !important; text-align: center !important; margin-top: 10px; }
 }
 
-/* Dropdown Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 
 /* =========================================
    IMAGE SHAPE FIX & SECURITY
@@ -304,4 +241,175 @@
     z-index: 10;                
     pointer-events: auto;       
     cursor: default;
+}
+
+/* =========================================
+   "SEE FULL TEAM" BUTTON
+   ========================================= */
+
+.btn-outline-primary {
+    background-color: #2962ff !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 15px 40px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(41, 98, 255, 0.4) !important;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(41, 98, 255, 0.6) !important;
+}
+
+/* =========================================
+   ABOUT PAGE & LAYOUT REPAIRS
+   ========================================= */
+
+/* 1. DESKTOP: Controlled Overlap (Restored) */
+@media screen and (min-width: 992px) {
+    .section-story-overview .image-container {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; 
+    }
+
+    .section-story-overview .blockquote {
+        margin-top: -80px !important; 
+        margin-right: 40px !important; 
+        margin-left: 40px !important; 
+        position: relative;
+        z-index: 10; 
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+        min-height: 100px;
+        border: none;
+        border-left: 5px solid #2962ff;
+    }
+}
+
+/* 2. MOBILE: Clean Stack (No Overlap) */
+@media screen and (max-width: 991px) {
+    .section-story-overview .image-container {
+        width: 100% !important;
+        height: 280px !important;
+        margin-bottom: 0 !important;
+        border-radius: 8px 8px 0 0; 
+    }
+
+    .section-story-overview .blockquote {
+        margin-top: 0 !important;
+        margin-bottom: 30px !important;
+        background-color: #f8f9fa; 
+        border-left: 5px solid #2962ff; 
+        border-radius: 0 0 8px 8px; 
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   FOOTER ICONS (SLEEK)
+   ========================================= */
+
+.footer-icon {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease, opacity 0.2s;
+    opacity: 0.8;
+    color: #555;
+}
+
+.footer-icon:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+/* Brand Colors */
+.icon-twitter { color: #1DA1F2 !important; }
+.icon-facebook { color: #1877F2 !important; }
+.icon-linkedin { color: #0077b5 !important; }
+.icon-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+    display: inline-block;
+}
+
+/* =========================================
+   BLACK TEXT ENFORCEMENT (SAFE ZONE)
+   ========================================= */
+/* This only targets the Home Page sections by ID to prevent global breakage */
+
+#services .description,
+#team .description,
+#services .info-title,
+#team .title,
+#team h4 a {
+    color: #000000 !important; /* Force Black */
+    opacity: 1 !important;
+    font-weight: 500;
+}
+
+/* Specific fix for "Our Specializations" subheading */
+#services h5.description {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+/* =========================================
+   ABOUT PAGE QUOTE BOX RESTORATION
+   ========================================= */
+
+/* Desktop: Overlap Style */
+@media screen and (min-width: 992px) {
+    .section-story-overview .image-container {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; 
+    }
+
+    .section-story-overview .blockquote {
+        margin-top: -80px !important; /* The Overlap Magic */
+        margin-right: 40px !important; 
+        margin-left: 40px !important; 
+        position: relative;
+        z-index: 10; 
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+        min-height: 100px;
+        border: none;
+        border-left: 5px solid #2962ff;
+    }
+}
+
+/* Mobile: Clean Stack */
+@media screen and (max-width: 991px) {
+    .section-story-overview .image-container {
+        width: 100% !important;
+        height: 280px !important;
+        margin-bottom: 0 !important; /* Remove gap */
+        border-radius: 8px 8px 0 0; 
+    }
+
+    .section-story-overview .blockquote {
+        margin-top: 0 !important; /* No overlap */
+        margin-bottom: 30px !important;
+        background-color: #f8f9fa; 
+        border-left: 5px solid #2962ff; 
+        border-radius: 0 0 8px 8px; 
+        padding: 20px;
+    }
 }

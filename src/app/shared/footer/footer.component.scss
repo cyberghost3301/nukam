@@ -1,0 +1,59 @@
+/* =========================================
+   FOOTER COMPONENT STYLES
+   ========================================= */
+
+/* Mobile Alignment */
+@media screen and (max-width: 991px) {
+    .footer .container {
+        text-align: center !important;
+    }
+    
+    .footer nav {
+        float: none !important;
+        display: block;
+    }
+    
+    .footer nav ul {
+        justify-content: center;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .footer .copyright {
+        float: none !important;
+        text-align: center !important;
+        margin-top: 10px;
+    }
+}
+
+/* =========================================
+   SLEEK FOOTER ICONS
+   ========================================= */
+
+.footer-icon {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease, opacity 0.2s;
+    opacity: 0.8;
+    color: #555;
+}
+
+.footer-icon:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+/* Brand Colors */
+.icon-twitter { color: #1DA1F2 !important; }
+.icon-facebook { color: #1877F2 !important; }
+.icon-linkedin { color: #0077b5 !important; }
+.icon-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+    display: inline-block;
+}

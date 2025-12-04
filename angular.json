@@ -16,7 +16,10 @@
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
-            "allowedCommonJsDependencies": ["nouislider", "rellax"],
+            "allowedCommonJsDependencies": [
+              "nouislider",
+              "rellax"
+            ],
             "assets": [
               "src/assets",
               "src/favicon.ico"
@@ -28,11 +31,26 @@
             ],
             "scripts": [
               "node_modules/rellax/rellax.min.js"
-            ]
+            ],
+            "optimization": {
+              "scripts": true,
+              "styles": {
+                "minify": false,
+                "inlineCritical": false
+              },
+              "fonts": false
+            }
           },
           "configurations": {
             "production": {
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                },
+                "fonts": false
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,

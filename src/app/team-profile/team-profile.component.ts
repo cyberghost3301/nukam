@@ -35,19 +35,19 @@ export class TeamProfileComponent implements OnInit {
       bio: 'Guiding technical strategy and long-term business development goals.',
       password: 'saur'
     },
+    'antara': {
+      name: 'Antara', role: 'CMO', image: 'assets/img/team/ppantara.jpg',
+      id: 'SSPL-OPS-001', status: 'Active', joined: '2025', email: 'antara.g@spirecrest.in',
+      bio: 'Chief of Marketing & Operation managing outreach initiatives & business operations.',
+      password: 'anta'
+    },
+
+    // MANAGEMENT & OPERATIONS
     'laraib': {
       name: 'Ar. Laraib', role: 'Consulting Architect', image: 'assets/img/team/pplaraib.jpg',
       id: 'SSPL-CONS-001', status: 'Active', joined: '2021', email: 'laraib.a@spirecrest.in',
       bio: 'Leading the design and planning for our Interior & Architecture projects.',
       password: 'lara'
-    },
-
-    // MANAGEMENT & OPERATIONS
-    'antara': {
-      name: 'Antara', role: 'COO', image: 'assets/img/team/ppantara.jpg',
-      id: 'SSPL-OPS-001', status: 'Active', joined: '2025', email: 'antara.g@spirecrest.in',
-      bio: 'Chief Operating Officer managing daily business operations.',
-      password: 'anta'
     },
     'anshuman': {
       name: 'Er. Anshuman', role: 'Innovation Catalyst', image: 'assets/img/team/ppanshuman.jpg',

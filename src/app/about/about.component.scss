@@ -1,0 +1,116 @@
+/* =========================================
+   ABOUT PAGE LOCAL STYLES
+   ========================================= */
+
+/* 1. Header & Typography Specific to About */
+.page-header {
+    min-height: 550px;
+}
+
+.section-about-us {
+    padding-bottom: 0;
+    
+    .title {
+        color: #000000 !important; /* Pitch Black Headers */
+        font-weight: 700;
+    }
+
+    .description {
+        color: #000000 !important; /* Pitch Black Text */
+        font-weight: 500;
+        opacity: 1;
+    }
+}
+
+/* 2. "Scalability & Expertise" Section Text */
+.info-description {
+    color: #000000 !important;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   QUOTE BOX ENGINE (The Fix)
+   ========================================= */
+
+/* DESKTOP: Overlap Effect */
+@media screen and (min-width: 992px) {
+    .section-story-overview {
+        padding: 50px 0;
+    }
+
+    .image-container {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1; /* Image stays behind */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .blockquote {
+        /* Pulls the box UP over the image */
+        margin-top: -100px !important; 
+        margin-right: 40px !important; 
+        margin-left: 40px !important; 
+        
+        position: relative;
+        z-index: 10; /* Box sits on top */
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+        border: none;
+        border-left: 5px solid #2962ff; /* Brand Blue Strip */
+        
+        /* Font Styling */
+        color: #000000 !important;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 1.1rem;
+    }
+}
+
+/* MOBILE: Clean Stack (No Overlap) */
+@media screen and (max-width: 991px) {
+    .section-story-overview {
+        padding: 20px 0;
+    }
+
+    .image-container {
+        width: 100% !important;
+        height: 250px !important; /* Visible height */
+        margin-bottom: 0 !important; /* Connects to box below */
+        border-radius: 8px 8px 0 0; /* Top rounded only */
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .blockquote {
+        margin-top: 0 !important; /* No overlap */
+        margin-bottom: 40px !important; /* Space after */
+        
+        background-color: #f8f9fa; /* Slight contrast */
+        border-left: 5px solid #2962ff; 
+        border-radius: 0 0 8px 8px; /* Bottom rounded only */
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        
+        color: #333 !important;
+        font-size: 1rem;
+    }
+}
+
+/* =========================================
+   STATS SECTION (2018, 12+, 450+)
+   ========================================= */
+.about-office .title {
+    color: #000000 !important;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.about-office h4 {
+    color: #555 !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+}

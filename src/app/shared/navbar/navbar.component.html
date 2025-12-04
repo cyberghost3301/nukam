@@ -1,112 +1,120 @@
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="500">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" [routerLink]="['/']" placement="bottom" ngbTooltip="Designed by PCMECHANIX. Coded by Aum">
-                Spirecrest
+            <a class="navbar-brand" [routerLink]="['/index']" placement="bottom" ngbTooltip="Designed by Spirecrest Solutions">
+                SPIRECREST
             </a>
-            <!-- HAMBURGER BUTTON -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
+            
+            <button class="navbar-toggler navbar-toggler" type="button" (click)="sidebarToggle()" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar top-bar"></span>
+                <span class="navbar-toggler-bar middle-bar"></span>
+                <span class="navbar-toggler-bar bottom-bar"></span>
             </button>
         </div>
 
-        <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+        <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="assets/img/blurred-image-1.jpg">
             
-            <!-- MOBILE CLOSE BUTTON (X) -->
             <button class="mobile-close d-lg-none" (click)="sidebarClose()">
                 <i class="now-ui-icons ui-1_simple-remove"></i>
             </button>
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/']" (click)="sidebarClose()">
-                        <i class="now-ui-icons business_bank"></i>
+                    <a class="nav-link" [routerLink]="['/index']" (click)="sidebarClose()">
                         <p>Home</p>
                     </a>
                 </li>
-                
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/about']" (click)="sidebarClose()">
-                        <i class="now-ui-icons business_badge"></i>
                         <p>About Us</p>
                     </a>
                 </li>
 
-                <!-- SERVICES DROPDOWN -->
                 <li class="nav-item" ngbDropdown>
                     <a class="nav-link dropdown-toggle" id="servicesDropdown" ngbDropdownToggle>
-                        <i class="now-ui-icons design_app"></i>
                         <p>Services</p>
                     </a>
                     <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="servicesDropdown">
                         <a class="dropdown-item" [routerLink]="['/service', 'surveillance']" (click)="sidebarClose()">
-                            <i class="now-ui-icons business_badge"></i> Advanced Surveillance
+                            Advanced Surveillance
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'automation']" (click)="sidebarClose()">
-                            <i class="now-ui-icons tech_mobile"></i> Smart Automation
+                            Smart Automation
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'software']" (click)="sidebarClose()">
-                            <i class="now-ui-icons design_app"></i> Web & Software
+                            Web & Software
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'consulting']" (click)="sidebarClose()">
-                            <i class="now-ui-icons business_briefcase-24"></i> IT Consulting
+                            IT Consulting
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'interior']" (click)="sidebarClose()">
-                            <i class="now-ui-icons design_palette"></i> Interior & Architecture
+                            Interior & Architecture
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'network']" (click)="sidebarClose()">
-                            <i class="now-ui-icons tech_laptop"></i> Networking & Cloud
+                            Networking & Cloud
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'computer']" (click)="sidebarClose()">
-                            <i class="now-ui-icons tech_controller-modern"></i> Computer Solutions
+                            Computer Solutions
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'solar']" (click)="sidebarClose()">
-                            <i class="now-ui-icons objects_planet"></i> Solar Power
+                            Solar Power
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'studio']" (click)="sidebarClose()">
-                            <i class="now-ui-icons media-2_note-03"></i> Audio Visual
+                            Audio Visual
                         </a>
                         <a class="dropdown-item" [routerLink]="['/service', 'marketing']" (click)="sidebarClose()">
-                            <i class="now-ui-icons business_bulb-63"></i> Digital Marketing
+                            Digital Marketing
                         </a>
                     </div>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/team']" (click)="sidebarClose()">
-                        <i class="now-ui-icons users_circle-08"></i>
                         <p>Our Team</p>
                     </a>
                 </li>
-                
                 <li class="nav-item">
                     <a class="nav-link btn btn-neutral" [routerLink]="['/contact']" (click)="sidebarClose()">
-                        <i class="now-ui-icons arrows-1_share-66"></i>
                         <p>Contact Us</p>
                     </a>
                 </li>
 
-                <!-- Social Icons -->
-                <li class="nav-item">
+                <li class="nav-item d-lg-none social-row-mobile">
+                    <a class="nav-link mobile-icon icon-twitter" href="https://twitter.com/spirecrestindia/" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="nav-link mobile-icon icon-facebook" href="https://www.facebook.com/ssplbharat/" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a class="nav-link mobile-icon icon-instagram" href="https://www.instagram.com/spirecrest/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="nav-link mobile-icon icon-linkedin" href="https://www.linkedin.com/company/spirecrest" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item d-none d-lg-block">
                     <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/spirecrestindia/" target="_blank">
                         <i class="fab fa-twitter"></i>
-                        <p class="d-lg-none d-xl-none">Twitter</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none d-lg-block">
                     <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/ssplbharat/" target="_blank">
                         <i class="fab fa-facebook-square"></i>
-                        <p class="d-lg-none d-xl-none">Facebook</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item d-none d-lg-block">
                     <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/spirecrest/" target="_blank">
                         <i class="fab fa-instagram"></i>
-                        <p class="d-lg-none d-xl-none">Instagram</p>
                     </a>
                 </li>
+                <li class="nav-item d-none d-lg-block">
+                    <a class="nav-link" rel="tooltip" title="Follow us on LinkedIn" data-placement="bottom" href="https://www.linkedin.com/company/spirecrest" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

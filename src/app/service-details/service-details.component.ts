@@ -148,9 +148,18 @@ export class ServiceDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.serviceId = this.route.snapshot.paramMap.get('id');
-    if (this.serviceData[this.serviceId]) {
-      this.currentService = this.serviceData[this.serviceId];
-    }
+    // FIX: Use .subscribe() instead of .snapshot
+    // This forces the data to update whenever the URL parameter 'id' changes
+    this.route.params.subscribe(params => {
+      this.serviceId = params['id'];
+      
+      // Update content immediately
+      if (this.serviceData[this.serviceId]) {
+        this.currentService = this.serviceData[this.serviceId];
+        
+        // Optional: Scroll to top smoothly when content changes
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
   }
 }
