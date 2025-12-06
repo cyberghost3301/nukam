@@ -18,6 +18,61 @@
   
     <div class="main">
 
+        <!-- THE PROCESS SECTION -->
+        <div class="section process-section">
+            <div class="container">
+                <h2 class="title text-center">How We Work</h2>
+                <p class="description text-center section-subtitle">Our streamlined approach ensures exceptional results every time.</p>
+                
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="now-ui-icons users_single-02"></i>
+                        </div>
+                        <h4>Consultation</h4>
+                        <p>Understanding your vision and requirements</p>
+                    </div>
+                    
+                    <div class="process-arrow d-none d-md-flex">
+                        <i class="now-ui-icons arrows-1_minimal-right"></i>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="now-ui-icons design-2_ruler-pencil"></i>
+                        </div>
+                        <h4>Strategy</h4>
+                        <p>Crafting tailored solutions for success</p>
+                    </div>
+                    
+                    <div class="process-arrow d-none d-md-flex">
+                        <i class="now-ui-icons arrows-1_minimal-right"></i>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="now-ui-icons ui-2_settings-90"></i>
+                        </div>
+                        <h4>Execution</h4>
+                        <p>Delivering with precision and quality</p>
+                    </div>
+                    
+                    <div class="process-arrow d-none d-md-flex">
+                        <i class="now-ui-icons arrows-1_minimal-right"></i>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="now-ui-icons ui-2_like"></i>
+                        </div>
+                        <h4>Support</h4>
+                        <p>Ongoing assistance and maintenance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES SECTION -->
         <div class="section text-center" id="services" style="background-color: #f4f5f7;">
             <div class="container">
                 <h2 class="title">Our Specializations</h2>
@@ -25,53 +80,35 @@
                 
                 <div class="row">
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'surveillance']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Advanced Surveillance</h4>
-                                <p class="description">CCTV, biometric access control, attendance systems, X-ray scanners, and metal detectors.</p>
+                        <a [routerLink]="['/service', 'surveillance']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Advanced Surveillance</h4>
+                                    <p class="service-description">CCTV, biometric access control, attendance systems, X-ray scanners, and metal detectors.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'automation']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Smart Automation</h4>
-                                <p class="description">Smart switches, motorized curtain tracks, automatic pet feeders, and drip irrigation systems.</p>
+                        <a [routerLink]="['/service', 'automation']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Smart Automation</h4>
+                                    <p class="service-description">Smart switches, motorized curtain tracks, automatic pet feeders, and drip irrigation systems.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'software']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Web, App & Software</h4>
-                                <p class="description">Custom web, mobile app, and software design across all major platforms by our digital wing.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-    
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <a [routerLink]="['/service', 'marketing']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Digital Marketing</h4>
-                                <p class="description">Strategic campaigns, social media management, SEO, and data-driven advertising to amplify your reach.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a [routerLink]="['/service', 'interior']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Interior & Architecture</h4>
-                                <p class="description">Holistic solutions for residential and commercial spaces, including full interior design planning.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a [routerLink]="['/service', 'network']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Networking & Cloud</h4>
-                                <p class="description">Networking setup, robust data servers, seamless Cloud/ML/AI solutions, and IoT integrations.</p>
+                        <a [routerLink]="['/service', 'software']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Web, App & Software</h4>
+                                    <p class="service-description">Custom web, mobile app, and software design across all major platforms by our digital wing.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -79,26 +116,35 @@
     
                 <div class="row mt-4">
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'computer']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Computer Solutions</h4>
-                                <p class="description">Trading and repair of all types of desktop, laptops, and related hardware/software components.</p>
+                        <a [routerLink]="['/service', 'marketing']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Digital Marketing</h4>
+                                    <p class="service-description">Strategic campaigns, social media management, SEO, and data-driven advertising to amplify your reach.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'solar']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Solar Power Systems</h4>
-                                <p class="description">Complete project undertakings for efficient On-Grid/Off-Grid/Hybrid solar power systems.</p>
+                        <a [routerLink]="['/service', 'interior']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Interior & Architecture</h4>
+                                    <p class="service-description">Holistic solutions for residential and commercial spaces, including full interior design planning.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'studio']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Audio Visual & Studio</h4>
-                                <p class="description">Hi-Fi audio systems, home theatre installations, and custom recording studio setups.</p>
+                        <a [routerLink]="['/service', 'network']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Networking & Cloud</h4>
+                                    <p class="service-description">Networking setup, robust data servers, seamless Cloud/ML/AI solutions, and IoT integrations.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -106,26 +152,71 @@
     
                 <div class="row mt-4">
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'consulting']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">IT Consulting</h4>
-                                <p class="description">Strategic IT consulting, system integration, and tailored business solutions to optimize operations.</p>
+                        <a [routerLink]="['/service', 'computer']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Computer Solutions</h4>
+                                    <p class="service-description">Trading and repair of all types of desktop, laptops, and related hardware/software components.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'photography']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Photography & Cinematography</h4>
-                                <p class="description">Capturing moments with cinematic precision. We specialize in corporate events, high-end product shoots, and 4K drone videography.</p>
+                        <a [routerLink]="['/service', 'solar']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Solar Power Systems</h4>
+                                    <p class="service-description">Complete project undertakings for efficient On-Grid/Off-Grid/Hybrid solar power systems.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a [routerLink]="['/service', 'cybersecurity']" style="color: inherit; text-decoration: none;">
-                            <div class="card card-body" style="min-height: 250px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <h4 class="info-title">Cyber Security & Audits</h4>
-                                <p class="description">Safeguarding your digital infrastructure. We provide vulnerability assessments, network penetration testing, and security compliance audits.</p>
+                        <a [routerLink]="['/service', 'studio']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Audio Visual & Studio</h4>
+                                    <p class="service-description">Hi-Fi audio systems, home theatre installations, and custom recording studio setups.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <a [routerLink]="['/service', 'consulting']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">IT Consulting</h4>
+                                    <p class="service-description">Strategic IT consulting, system integration, and tailored business solutions to optimize operations.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a [routerLink]="['/service', 'photography']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Photography & Cinematography</h4>
+                                    <p class="service-description">Capturing moments with cinematic precision. Corporate events, high-end product shoots, and 4K drone videography.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a [routerLink]="['/service', 'cybersecurity']" class="service-card-link">
+                            <div class="service-card">
+                                <div class="service-overlay"></div>
+                                <div class="service-content">
+                                    <h4 class="service-title">Cyber Security & Audits</h4>
+                                    <p class="service-description">Safeguarding your digital infrastructure. Vulnerability assessments, penetration testing, and security compliance audits.</p>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -133,6 +224,34 @@
     
             </div>
         </div>
+
+        <!-- MINI STATS STRIP -->
+        <div class="stats-strip">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Core Experts</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEADERSHIP SECTION -->
         <div class="section section-team text-center" id="team">
           <div class="container">
               <h2 class="title">Our Leadership</h2>
@@ -200,6 +319,22 @@
               </div>
           </div>
       </div>
+
+      <!-- FEATURED PROJECT SPOTLIGHT -->
+      <div class="section featured-project-section">
+          <div class="container-fluid px-0">
+              <div class="featured-project">
+                  <div class="featured-overlay"></div>
+                  <div class="featured-content">
+                      <span class="featured-badge">Featured Project</span>
+                      <h2 class="featured-title">Smart Home Automation</h2>
+                      <p class="featured-location"><i class="now-ui-icons location_pin"></i> Gomti Nagar, Lucknow</p>
+                      <a [routerLink]="['/service', 'automation']" class="btn btn-featured">View Details</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
       </div>
     
     <app-footer></app-footer>

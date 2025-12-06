@@ -1,0 +1,62 @@
+I need to execute a comprehensive DESIGN REPAIR and VISUAL OVERHAUL for the Angular project. Please perform the following 5 steps strictly in order.
+
+### GOAL
+Fix broken mobile layouts, correct the "ugly" styling on the Home Page, repair the About Page quote box, align the Admin Login page, and modernize the Contact Page.
+
+---
+
+### STEP 1: Home Page (ComponentsComponent) Design Overhaul
+Fix the "bland" look by adding "Texture" sections and refining the cards.
+
+1. **Update `src/app/components/components.component.html`**:
+   - **Add "The Process" Section:** Insert a new `div.section` between the Hero and Services. It should have a horizontal flow: "Consultation -> Strategy -> Execution -> Support" using `now-ui-icons`.
+   - **Add "Mini Stats" Strip:** Insert a high-contrast (black background) strip between Services and Leadership showing: "50+ Projects", "12+ Experts", "100% Satisfaction".
+   - **Service Cards:** Ensure all icons are removed (as per previous instruction) and the structure is clean for the new hover effects.
+   - **Add "Featured Project" Spotlight:** Add a full-width image card section before the Footer with a text overlay: "Featured Project: Smart Home Automation - Gomti Nagar".
+
+2. **Update `src/app/components/components.component.scss`**:
+   - **Service Card Revamp:** Add CSS for a "Hover-Reveal" effect.
+     - Default: Image background with White Title at bottom.
+     - Hover: Image dims, Description slides up.
+   - **Stats Strip:** Styling for the black bar and white numbers.
+
+### STEP 2: About Page Fixes & Content Expansion
+Restore the Quote Box logic and add "Core Values".
+
+1. **Update `src/app/about/about.component.scss`**:
+   - **Fix Quote Box:**
+     - Desktop: `margin-top: -120px`, `z-index: 20`, `background: #fff`.
+     - Mobile: `margin-top: 0`, `margin-bottom: 30px`, `background: #f8f9fa`.
+   - **Mobile Layout:** Ensure `.image-container` has `width: 100%` and `margin-bottom: 0` on mobile so the quote box stacks perfectly below it.
+
+2. **Update `src/app/about/about.component.html`**:
+   - **Add "Our Roots" Timeline:** A brief vertical list showing key milestones (2018 Founded -> 2020 Expansion -> 2024 New Tech).
+   - **Add "Core Values":** A 3-card row (Innovation, Integrity, Impact) below the story overview.
+
+### STEP 3: Contact Page "Hybrid" Makeover
+Implement the "Floating Card + Bottom Map" design.
+
+1. **Update `src/app/contact/contact.component.html`**:
+   - **Structure:**
+     - **Top Section (50vh):** A clean background with a centered, floating white card containing the Contact Form.
+     - **Contact Info Bar:** A sleek horizontal bar *above* the map containing clickable Phone, Email, and Address.
+     - **Bottom Section (50vh):** A full-width Google Map iframe spanning edge-to-edge.
+     - **Footer:** Sits below the map.
+
+2. **Update `src/app/contact/contact.component.scss`**:
+   - Ensure the Map iframe has `width: 100%` and `height: 50vh`.
+   - Ensure the Contact Form card overlaps the split between the top section and the map slightly for a modern look.
+
+### STEP 4: Admin Login Alignment Fix
+Fix the "Logo behind Navbar" issue.
+
+1. **Update `src/app/examples/login/login.component.scss`** (or global styles if necessary):
+   - Add `padding-top: 80px` (or appropriate spacing) to the Login Page container so the content clears the fixed navbar.
+   - Ensure the Navbar has a `z-index` higher than the login background.
+
+### STEP 5: Mobile Fixes (The Laundry List)
+1. **Update `src/app/shared/navbar/navbar.component.scss`**:
+   - **Instagram Cutoff:** Add `padding-right: 20px` to the `.social-row-mobile` container.
+   - **Contact Text Center:** Use `display: flex; justify-content: center;` on the Contact Us button container in the mobile menu.
+
+Execute these visual repairs now.

@@ -1,0 +1,31 @@
+/* =========================================
+   LOGIN PAGE - NAVBAR CLEARANCE FIX
+   ========================================= */
+
+/* Ensure the login page content clears the fixed navbar */
+:host {
+    display: block;
+}
+
+.wrapper {
+    padding-top: 0;
+}
+
+/* The page-header already has proper styling, but ensure content is visible */
+.page-header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+/* Ensure login card is properly positioned */
+.card-login {
+    position: relative;
+    z-index: 10;
+}
+
+/* Fix navbar z-index to stay above background */
+:host ::ng-deep .navbar {
+    z-index: 1050 !important;
+}
