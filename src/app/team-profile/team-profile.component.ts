@@ -18,13 +18,13 @@ export class TeamProfileComponent implements OnInit {
   teamData = {
     // LEADERSHIP
     'aum': {
-      name: 'Aum', role: 'Founder', image: 'assets/img/team/ppaum.jpg',
+      name: 'Aum', role: 'Executive Director', image: 'assets/img/team/ppaum.jpg',
       id: 'SSPL-EXEC-001', status: 'Active', joined: '2018', email: 'aum@spirecrest.in',
       bio: 'Visionary leader driving innovation and strategic growth for Spirecrest.',
       password: 'aumc'
     },
     'deshesh': {
-      name: 'Deshesh', role: 'Director', image: 'assets/img/team/ppdeshesh.jpg',
+      name: 'Deshesh', role: 'Managing Director', image: 'assets/img/team/ppdeshesh.jpg',
       id: 'SSPL-EXEC-002', status: 'Active', joined: '2018', email: 'deshesh@spirecrest.in',
       bio: 'Overseeing operations and ensuring excellence in execution across all verticals.',
       password: 'desh'
