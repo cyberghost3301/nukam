@@ -78,7 +78,7 @@
                 <div class="col-lg-4">
                     <div class="sidebar-wrapper">
                         
-                        <!-- Request Quote Card -->
+                        <!-- CONTAINER 1: Request Quote Card (CTA) -->
                         <div class="card quote-card">
                             <div class="card-body">
                                 <h4 class="card-title text-center">Request a Quote</h4>
@@ -97,23 +97,45 @@
                                 <hr class="my-4">
                                 
                                 <div class="contact-info">
-                                    <p><i class="now-ui-icons tech_mobile mr-2"></i> +91 9250974145</p>
-                                    <p><i class="now-ui-icons ui-1_email-85 mr-2"></i> info@spirecrest.in</p>
+                                    <p>
+                                        <a href="tel:+919250974145" class="contact-link">
+                                            <i class="now-ui-icons tech_mobile mr-2"></i> +91 9250974145
+                                        </a>
+                                    </p>
+                                    <p>
+                                        <a href="mailto:info@spirecrest.in" class="contact-link">
+                                            <i class="now-ui-icons ui-1_email-85 mr-2"></i> info@spirecrest.in
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Other Services Card -->
-                        <div class="card services-card mt-4">
+                        <!-- CONTAINER 2: Related Services (Same Category) -->
+                        <div class="card services-card mt-4" *ngIf="relatedServices.length > 0">
                             <div class="card-body">
-                                <h5 class="card-title">Other Services</h5>
+                                <h5 class="card-title">Related Services</h5>
                                 <ul class="other-services-list">
-                                    <li><a [routerLink]="['/service', 'surveillance']">Advanced Surveillance</a></li>
-                                    <li><a [routerLink]="['/service', 'automation']">Smart Automation</a></li>
-                                    <li><a [routerLink]="['/service', 'software']">Web, App & Software</a></li>
-                                    <li><a [routerLink]="['/service', 'network']">Networking & Cloud</a></li>
-                                    <li><a [routerLink]="['/service', 'solar']">Solar Power Systems</a></li>
+                                    <li *ngFor="let service of relatedServices">
+                                        <a [routerLink]="['/service', service.id]">
+                                            <i class="now-ui-icons {{ service.icon }} mr-2"></i>
+                                            {{ service.title }}
+                                        </a>
+                                    </li>
                                 </ul>
+                            </div>
+                        </div>
+
+                        <!-- CONTAINER 3: Explore (Different Category) -->
+                        <div class="card explore-card mt-4" *ngIf="exploreService">
+                            <div class="card-body">
+                                <h5 class="card-title">Explore Something New</h5>
+                                <p class="text-muted small mb-3">Discover more from our other categories</p>
+                                <a [routerLink]="['/service', exploreService.id]" class="explore-link">
+                                    <i class="now-ui-icons {{ exploreService.icon }} explore-icon"></i>
+                                    <span class="explore-title">{{ exploreService.title }}</span>
+                                    <i class="now-ui-icons arrows-1_minimal-right explore-arrow"></i>
+                                </a>
                             </div>
                         </div>
 

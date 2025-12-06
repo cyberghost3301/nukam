@@ -10,3 +10,127 @@
 .section {
     flex: 1;
 }
+
+/* =========================================
+   KANBAN BOARD STYLES
+   ========================================= */
+.kanban-board {
+    min-height: 300px;
+}
+
+.kanban-column {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    height: 100%;
+    min-height: 280px;
+}
+
+.kanban-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.kanban-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #333;
+}
+
+.kanban-new .kanban-header {
+    border-bottom-color: #2196F3;
+}
+
+.kanban-contacted .kanban-header {
+    border-bottom-color: #ff9800;
+}
+
+.kanban-converted .kanban-header {
+    border-bottom-color: #4caf50;
+}
+
+.kanban-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kanban-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    
+    h6 {
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #333;
+    }
+}
+
+/* =========================================
+   CHART PLACEHOLDER STYLES
+   ========================================= */
+.chart-placeholder {
+    position: relative;
+    min-height: 300px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-placeholder canvas {
+    opacity: 0.1;
+}
+
+.chart-overlay {
+    position: absolute;
+    text-align: center;
+    
+    i {
+        font-size: 4rem;
+        color: #adb5bd;
+        margin-bottom: 15px;
+        display: block;
+    }
+    
+    p {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 5px;
+    }
+}
+
+/* Quick Stats Cards */
+.icon-success i {
+    color: #4caf50;
+}
+
+.icon-info i {
+    color: #2196F3;
+}
+
+.icon-warning i {
+    color: #ff9800;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .kanban-column {
+        margin-bottom: 20px;
+    }
+}

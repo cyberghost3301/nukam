@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService, TeamMember } from '../services/team.service';
+import { TEAM_MEMBERS, TeamMemberData } from '../shared/team-data';
 
 @Component({
   selector: 'app-team',
@@ -9,7 +10,7 @@ import { TeamService, TeamMember } from '../services/team.service';
 export class TeamComponent implements OnInit {
 
   // Arrays to hold sorted team members
-  leadership: TeamMember[] = [];
+  leadership: TeamMemberData[] = TEAM_MEMBERS;
   management: TeamMember[] = [];
   projectHr: TeamMember[] = [];
   development: TeamMember[] = [];
@@ -27,13 +28,8 @@ export class TeamComponent implements OnInit {
 
   // Helper to sort members into the correct rows
   sortMembers(data: any) {
-    // 1. LEADERSHIP (Aum, Deshesh, Saurabh, Antara)
-    this.leadership = [
-      data['aum'], 
-      data['deshesh'], 
-      data['saurabh'], 
-      data['antara'] // Swapped here
-    ];
+    // 1. LEADERSHIP - Now uses centralized TEAM_MEMBERS from shared/team-data.ts
+    // (Already initialized in class property)
 
     // 2. MANAGEMENT (Laraib, Anshuman, Rahul, Aakash)
     this.management = [

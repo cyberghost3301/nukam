@@ -2,15 +2,12 @@ import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionConfig } from '@ng-bootstrap/ng-bootstrap';
 import * as Rellax from 'rellax';
+import { TEAM_MEMBERS, TeamMemberData } from '../shared/team-data';
 
 @Component({
     selector: 'app-components',
     templateUrl: './components.component.html',
-    styles: [`
-    ngb-progressbar {
-        margin-top: 5rem;
-    }
-    `]
+    styleUrls: ['./components.component.scss']
 })
 
 export class ComponentsComponent implements OnInit, OnDestroy {
@@ -31,6 +28,8 @@ export class ComponentsComponent implements OnInit, OnDestroy {
     public isCollapsed2 = true;
 
     state_icon_primary = true;
+
+    leaders: TeamMemberData[] = TEAM_MEMBERS;
 
     constructor( private renderer : Renderer2, config: NgbAccordionConfig) {
         config.closeOthers = true;

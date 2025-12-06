@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+interface ServiceInfo {
+  title: string;
+  icon: string;
+  description: string;
+  features: string[];
+  img: string;
+}
+
 @Component({
   selector: 'app-service-details',
   templateUrl: './service-details.component.html',
@@ -9,10 +17,28 @@ import { ActivatedRoute } from '@angular/router';
 export class ServiceDetailsComponent implements OnInit {
 
   serviceId: string;
-  currentService: any;
+  currentService: ServiceInfo;
+  relatedServices: { id: string; title: string; icon: string }[] = [];
+  exploreService: { id: string; title: string; icon: string } | null = null;
+
+  // --- CATEGORY MAPPINGS ---
+  categories: { [key: string]: string } = {
+    'surveillance': 'Infrastructure',
+    'network': 'Infrastructure',
+    'computer': 'Infrastructure',
+    'solar': 'Infrastructure',
+    'cybersecurity': 'Infrastructure',
+    'automation': 'Smart Living',
+    'studio': 'Smart Living',
+    'interior': 'Smart Living',
+    'software': 'Creative',
+    'marketing': 'Creative',
+    'photography': 'Creative',
+    'consulting': 'Creative'
+  };
 
   // --- SERVICE DATABASE ---
-  serviceData = {
+  serviceData: { [key: string]: ServiceInfo } = {
     'surveillance': {
       title: 'Advanced Surveillance Systems',
       icon: 'business_badge',
@@ -176,18 +202,47 @@ export class ServiceDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // FIX: Use .subscribe() instead of .snapshot
-    // This forces the data to update whenever the URL parameter 'id' changes
     this.route.params.subscribe(params => {
       this.serviceId = params['id'];
       
-      // Update content immediately
       if (this.serviceData[this.serviceId]) {
         this.currentService = this.serviceData[this.serviceId];
-        
-        // Optional: Scroll to top smoothly when content changes
+        this.loadRelatedServices();
+        this.loadExploreService();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
+  }
+
+  private loadRelatedServices(): void {
+    const currentCategory = this.categories[this.serviceId];
+    
+    this.relatedServices = Object.keys(this.serviceData)
+      .filter(id => id !== this.serviceId && this.categories[id] === currentCategory)
+      .slice(0, 3)
+      .map(id => ({
+        id,
+        title: this.serviceData[id].title,
+        icon: this.serviceData[id].icon
+      }));
+  }
+
+  private loadExploreService(): void {
+    const currentCategory = this.categories[this.serviceId];
+    
+    const otherCategoryServices = Object.keys(this.serviceData)
+      .filter(id => this.categories[id] !== currentCategory);
+    
+    if (otherCategoryServices.length > 0) {
+      const randomIndex = Math.floor(Math.random() * otherCategoryServices.length);
+      const randomId = otherCategoryServices[randomIndex];
+      this.exploreService = {
+        id: randomId,
+        title: this.serviceData[randomId].title,
+        icon: this.serviceData[randomId].icon
+      };
+    } else {
+      this.exploreService = null;
+    }
   }
 }

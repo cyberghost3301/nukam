@@ -1,21 +1,23 @@
 /* =========================================
-   CONTACT PAGE - HYBRID DESIGN
-   Floating Card + Bottom Map
+   CONTACT PAGE - FULL SCREEN MAP VARIANT
+   Floating Glass Buttons + Glass Form + Full Map
    ========================================= */
 
 .contact-page {
     min-height: 100vh;
     position: relative;
+    background: #f8f9fa;
 }
 
 /* =========================================
-   TOP HERO SECTION (50vh with form card)
+   HERO SECTION (Background with Title)
    ========================================= */
 .contact-hero {
     position: relative;
-    min-height: 70vh;
+    min-height: 45vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 120px 0 80px;
 }
 
@@ -39,19 +41,115 @@
     opacity: 0.5;
 }
 
+.hero-title {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    position: relative;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* =========================================
-   FLOATING FORM CARD
+   CONTAINER 1: FLOATING GLASS BUTTONS
    ========================================= */
-.floating-form-card {
+.floating-buttons-section {
     position: relative;
     z-index: 10;
-    background: #fff;
-    border-radius: 20px;
+    margin-top: -40px;
+    padding-bottom: 40px;
+}
+
+.floating-glass-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 18px 30px;
+    text-decoration: none !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        
+        i {
+            color: #fff;
+            background: #2962ff;
+        }
+    }
+    
+    i {
+        width: 45px;
+        height: 45px;
+        background: rgba(41, 98, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #2962ff;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+    }
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
+    strong {
+        color: #000;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    
+    small {
+        color: #666;
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================================
+   CONTAINER 2: FLOATING GLASS CARD (Form)
+   ========================================= */
+.glass-form-section {
+    padding: 40px 0 80px;
+}
+
+.floating-glass-card {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
     padding: 50px;
     max-width: 700px;
     margin: 0 auto;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-    transform: translateY(40px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .form-header {
@@ -83,7 +181,7 @@
 }
 
 .form-control {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.9);
     border: 2px solid #e9ecef;
     border-radius: 10px;
     height: 50px;
@@ -157,75 +255,13 @@ select.form-control {
 }
 
 /* =========================================
-   CONTACT INFO BAR
+   CONTAINER 3: FULL-WIDTH MAP (50vh)
    ========================================= */
-.contact-info-bar {
-    background: #111;
-    padding: 40px 0;
+.map-section-full {
     position: relative;
-    z-index: 5;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    
-    &:hover {
-        background: rgba(255, 255, 255, 0.05);
-        
-        .info-icon {
-            background: #2962ff;
-        }
-    }
-}
-
-.info-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    transition: all 0.3s ease;
-    
-    i {
-        color: #fff;
-        font-size: 1.2rem;
-    }
-}
-
-.info-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.info-label {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 3px;
-}
-
-.info-value {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-/* =========================================
-   MAP SECTION (50vh Full Width)
-   ========================================= */
-.map-section {
-    width: 100%;
+    width: 100vw;
     height: 50vh;
-    position: relative;
+    margin-left: calc(-50vw + 50%);
     
     iframe {
         width: 100%;
@@ -240,49 +276,64 @@ select.form-control {
 @media screen and (max-width: 991px) {
     .contact-hero {
         padding: 100px 15px 60px;
-        min-height: auto;
+        min-height: 35vh;
     }
     
-    .floating-form-card {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .floating-buttons-section {
+        margin-top: -30px;
+    }
+    
+    .floating-glass-button {
+        padding: 15px 25px;
+        border-radius: 40px;
+        
+        i {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+    }
+    
+    .floating-glass-card {
         padding: 35px 25px;
-        transform: translateY(30px);
     }
     
     .form-header {
         font-size: 1.6rem;
     }
     
-    .contact-info-bar {
-        padding: 30px 0;
-    }
-    
-    .info-item {
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        margin-bottom: 20px;
-        
-        .info-icon {
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-    }
-    
-    .info-text {
-        align-items: center;
-    }
-    
-    .map-section {
+    .map-section-full {
         height: 40vh;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .floating-form-card {
+    .floating-glass-card {
         padding: 30px 20px;
+        border-radius: 20px;
     }
     
     .form-header {
         font-size: 1.4rem;
+    }
+    
+    .floating-glass-button {
+        padding: 12px 20px;
+        
+        .button-text strong {
+            font-size: 0.9rem;
+        }
+        
+        .button-text small {
+            font-size: 0.8rem;
+        }
     }
 }

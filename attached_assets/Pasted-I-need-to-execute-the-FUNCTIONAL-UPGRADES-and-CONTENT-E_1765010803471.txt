@@ -1,0 +1,38 @@
+I need to execute the FUNCTIONAL UPGRADES and CONTENT EXPANSION for the Angular project. Please perform the following 4 steps strictly in order.
+
+### GOAL
+Centralize team data, implement smart sidebar logic for services, and upgrade the Admin Dashboard.
+
+---
+
+### STEP 1: Centralize Team Data (Single Source of Truth)
+1. **Create `src/app/shared/team-data.ts`**:
+   - Export a `TEAM_MEMBERS` constant array containing all 4 leaders (Aum, Deshesh, Saurabh, Antara) with their details.
+
+2. **Refactor Components**:
+   - Update `src/app/components/components.component.ts` (Home) to import and use `TEAM_MEMBERS`.
+   - Update `src/app/team/team.component.ts` (Our Team) to import and use `TEAM_MEMBERS`.
+   - *Result:* Editing the data file updates both pages.
+
+### STEP 2: Service Details "Smart Sidebar" & Content
+1. **Update `src/app/service-details/service-details.component.ts`**:
+   - Add a `categories` object mapping services to types (Infrastructure, Creative, Smart Living).
+   - Add logic to `ngOnInit` to select "Related Services" based on the current category.
+
+2. **Update `src/app/service-details/service-details.component.html`**:
+   - **Sidebar:**
+     - **Container 1 (CTA):** Keep the "Request Quote" card but ensure Phone/Email are hyperlinked (`tel:`, `mailto:`).
+     - **Container 2 (Related):** Loop through the "Related Services" logic.
+     - **Container 3 (Explore):** Display 1 random service from a *different* category.
+   - **Main Content:** Apply the "Zig-Zag" layout (Text Left/Image Right, then swap) for the description content.
+
+### STEP 3: Admin Dashboard Upgrades
+1. **Update `src/app/admin-dashboard/admin-dashboard.component.html`**:
+   - **Leads Kanban:** Add a placeholder "Leads Board" section with 3 columns (New, Contacted, Converted).
+   - **Visitor Graph:** Add a placeholder Chart.js canvas element (visual only for now).
+
+### STEP 4: Final Cleanup
+1. **Global Check:** Ensure no styles from Prompt 1 were overwritten.
+2. **Team Profile:** Verify the individual profile pages also pull from the new data source if possible (or note if they need manual updates).
+
+Execute these functional upgrades now.

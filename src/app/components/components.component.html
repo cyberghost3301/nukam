@@ -18,61 +18,7 @@
   
     <div class="main">
 
-        <!-- THE PROCESS SECTION -->
-        <div class="section process-section">
-            <div class="container">
-                <h2 class="title text-center">How We Work</h2>
-                <p class="description text-center section-subtitle">Our streamlined approach ensures exceptional results every time.</p>
-                
-                <div class="process-flow">
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="now-ui-icons users_single-02"></i>
-                        </div>
-                        <h4>Consultation</h4>
-                        <p>Understanding your vision and requirements</p>
-                    </div>
-                    
-                    <div class="process-arrow d-none d-md-flex">
-                        <i class="now-ui-icons arrows-1_minimal-right"></i>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="now-ui-icons design-2_ruler-pencil"></i>
-                        </div>
-                        <h4>Strategy</h4>
-                        <p>Crafting tailored solutions for success</p>
-                    </div>
-                    
-                    <div class="process-arrow d-none d-md-flex">
-                        <i class="now-ui-icons arrows-1_minimal-right"></i>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="now-ui-icons ui-2_settings-90"></i>
-                        </div>
-                        <h4>Execution</h4>
-                        <p>Delivering with precision and quality</p>
-                    </div>
-                    
-                    <div class="process-arrow d-none d-md-flex">
-                        <i class="now-ui-icons arrows-1_minimal-right"></i>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="now-ui-icons ui-2_like"></i>
-                        </div>
-                        <h4>Support</h4>
-                        <p>Ongoing assistance and maintenance</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SERVICES SECTION -->
+        <!-- SERVICES SECTION (Specializations) -->
         <div class="section text-center" id="services" style="background-color: #f4f5f7;">
             <div class="container">
                 <h2 class="title">Our Specializations</h2>
@@ -225,32 +171,6 @@
             </div>
         </div>
 
-        <!-- MINI STATS STRIP -->
-        <div class="stats-strip">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-item">
-                            <span class="stat-number">12+</span>
-                            <span class="stat-label">Core Experts</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- LEADERSHIP SECTION -->
         <div class="section section-team text-center" id="team">
           <div class="container">
@@ -258,51 +178,15 @@
               <div class="team">
                   <div class="row">
                       
-                      <div class="col-md-3">
+                      <div class="col-md-3" *ngFor="let leader of leaders">
                           <div class="team-player">
                               <div class="image-wrapper img-raised rounded-circle">
                                   <div class="image-overlay"></div>
-                                  <img src="assets/img/team/ppaum.jpg" alt="Aum" class="unstealable-image">
+                                  <img [src]="leader.image" [alt]="leader.name" class="unstealable-image">
                               </div>
-                              <h4 class="title"><a [routerLink]="['/profile', 'aum']">Aum</a></h4>
-                              <p class="category text-primary">Executive Director</p>
-                              <p class="description">Visionary leader driving innovation and strategic growth for Spirecrest.</p>
-                          </div>
-                      </div>
-  
-                      <div class="col-md-3">
-                          <div class="team-player">
-                              <div class="image-wrapper img-raised rounded-circle">
-                                  <div class="image-overlay"></div>
-                                  <img src="assets/img/team/ppdeshesh.jpg" alt="Deshesh" class="unstealable-image">
-                              </div>
-                              <h4 class="title"><a [routerLink]="['/profile', 'deshesh']">Deshesh</a></h4>
-                              <p class="category text-primary">Managing Director</p>
-                              <p class="description">Overseeing operations and ensuring excellence in execution across all verticals.</p>
-                          </div>
-                      </div>
-  
-                      <div class="col-md-3">
-                          <div class="team-player">
-                              <div class="image-wrapper img-raised rounded-circle">
-                                  <div class="image-overlay"></div>
-                                  <img src="assets/img/team/ppsaurabh.jpg" alt="Er. Saurabh" class="unstealable-image">
-                              </div>
-                              <h4 class="title"><a [routerLink]="['/profile', 'saurabh']">Er. Saurabh</a></h4>
-                              <p class="category text-primary">Strategic Advisor</p>
-                              <p class="description">Guiding technical strategy and long-term business development goals.</p>
-                          </div>
-                      </div>
-  
-                      <div class="col-md-3">
-                          <div class="team-player">
-                              <div class="image-wrapper img-raised rounded-circle">
-                                  <div class="image-overlay"></div>
-                                  <img src="assets/img/team/ppantara.jpg" alt="Antara" class="unstealable-image">
-                              </div>
-                              <h4 class="title"><a [routerLink]="['/profile', 'antara']">Antara</a></h4>
-                              <p class="category text-primary">CMO</p>
-                              <p class="description">Leading the team for our Marketing & Operational Initiatives.</p>
+                              <h4 class="title"><a [routerLink]="['/profile', leader.key]">{{ leader.name }}</a></h4>
+                              <p class="category text-primary">{{ leader.role }}</p>
+                              <p class="description">{{ leader.bio }}</p>
                           </div>
                       </div>
   
