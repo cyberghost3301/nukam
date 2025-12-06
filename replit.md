@@ -50,6 +50,31 @@ now-ui-kit-angular/
 
 ## Recent Changes
 
+### December 6, 2025 - Design Repair & Visual Overhaul (5 Steps Completed)
+
+#### STEP 1: Home Page Design Overhaul
+- Added "How We Work" Process section with 4 steps (Consultation → Strategy → Execution → Support)
+- Added "Mini Stats" black strip (50+ Projects, 12+ Experts, 100% Satisfaction)
+- Redesigned service cards with hover-reveal effect using gradient backgrounds
+- Added "Featured Project" spotlight section at the bottom
+
+#### STEP 2: About Page Fixes
+- Fixed Quote Box with proper desktop overlap (-120px margin-top, z-index: 20)
+- Added "Our Roots" vertical timeline (2018 Founded → 2020 Expansion → 2024 New Tech)
+- Added "Core Values" 3-card section (Innovation, Integrity, Impact)
+
+#### STEP 3: Contact Page Hybrid Makeover
+- Redesigned with floating white form card on gradient background
+- Added horizontal contact info bar above map
+- Full-width Google Maps iframe at bottom
+
+#### STEP 4: Admin Login Alignment Fix
+- Added padding-top: 80px to login page container to clear navbar
+
+#### STEP 5: Mobile Fixes
+- Added padding-right to social row for Instagram icon cutoff fix
+- Added contact button container centering styles
+
 ### December 6, 2025 - Fresh Clone Setup
 - Fresh clone of GitHub repository imported to Replit
 - Installed all npm dependencies with `--legacy-peer-deps` flag
