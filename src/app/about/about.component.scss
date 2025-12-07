@@ -30,7 +30,7 @@
 }
 
 /* =========================================
-   QUOTE BOX ENGINE (The FORCED Fix)
+   QUOTE BOX ENGINE (YOUR FIXED VERSION)
    ========================================= */
 
 /* Image container base styles */
@@ -41,35 +41,64 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* DESKTOP: Force Overlap Effect */
-@media screen and (min-width: 992px) {
+/* QUOTE BOX - THIS IS THE KEY */
+.section-story-overview .image-container .blockquote.blockquote-primary {
+    border-left: none !important;
+    border: 0 !important;
+    font-size: 1.1em !important;
+    line-height: 1.6 !important;
+    font-style: italic !important;
+    margin: 0 !important;
+    color: #f96332 !important;
+}
+
+/* DESKTOP - QUOTE OVER IMAGE */
+@media screen and (min-width: 768px) {
+    .section-story-overview .image-container .blockquote.blockquote-primary {
+        position: absolute !important;
+        bottom: 40px !important;
+        left: 40px !important;
+        right: 40px !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        padding: 25px !important;
+        border-radius: 8px !important;
+        color: #333 !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+        z-index: 10 !important;
+        font-weight: 500 !important;
+    }
+}
+
+/* MOBILE: Clean Stack (Hidden Quote, Gapped Images) */
+@media screen and (max-width: 991px) {
     .section-story-overview {
-        padding: 50px 0;
+        padding: 20px 0;
     }
 
     .section-story-overview .image-container {
-        z-index: 1 !important;
+        width: 100% !important;
+        height: 250px !important;
+        
+        /* Creates the gap between the first image and the second image */
+        margin-bottom: 30px !important; 
+        
+        border-radius: 10px; 
+        background-position: center center;
+        background-size: cover;
     }
 
+    /* Hides the quote box completely on mobile */
     .section-story-overview .blockquote {
-        margin-top: -100px !important;
-        margin-right: 20px !important;
-        margin-left: 20px !important;
-        
-        position: relative;
-        z-index: 50 !important;
-        background: #fff !important;
-        border-radius: 8px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        border: none;
-        border-left: 5px solid #2962ff;
-        
-        color: #000000 !important;
-        font-weight: 600;
-        font-style: italic;
-        font-size: 1.1rem;
+        display: none !important;
     }
+}
+
+
+.separator-primary {
+    background-color: #f96332;
+    height: 3px;
+    width: 100px;
+    margin: 30px auto;
 }
 
 /* MOBILE: Clean Stack (No Overlap) */
@@ -245,7 +274,7 @@
 }
 
 /* =========================================
-   STATS SECTION (2018, 12+, 450+)
+   STATS SECTION
    ========================================= */
 .about-office .title {
     color: #000000 !important;
