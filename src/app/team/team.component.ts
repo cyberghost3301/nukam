@@ -36,21 +36,22 @@ export class TeamComponent implements OnInit {
       data['laraib'], // Swapped here
       data['anshuman'], 
       data['rahul'], 
-      data['aakash']
+      data['shashank']
     ];
 
     // 3. PROJECT & HR
     this.projectHr = [
-      data['shashank'], 
-      data['prachi'], 
-      data['astha'], 
+      data['prachi'],
+      data['vaibhavi'],
+      data['aakash'],  
       data['shristi']
     ];
 
     // 4. DEVELOPMENT
     this.development = [
       data['sanchita'], 
-      data['kavya'], 
+      data['kavya'],
+      data['astha'],
       data['janvi'], 
       data['isha']
     ];
@@ -59,8 +60,8 @@ export class TeamComponent implements OnInit {
     this.support = [
       data['srishti_crgo'], 
       data['anushka'], 
-      data['ekta'], 
-      data['vaibhavi']
+      data['ekta'] 
+      
     ];
 
     // 6. TEAM MEMBERS
