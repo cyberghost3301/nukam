@@ -1,0 +1,10 @@
+# Replit files
+.local
+replit.md
+.replit
+.agent_state*
+
+# Vercel/System
+.vercel
+.git
+node_modules
